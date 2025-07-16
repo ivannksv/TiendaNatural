@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-arrow">←</a>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <img src="img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto">
+      <img src="img/cafe1.webp" alt="Cafe 1" />
+      <p>CAFE CON COLAGENO & MELENA DE LEON X 180 G</p>
+      <p class="precio">$25.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/cafe2.webp" alt="Cafe 2" />
+      <p>CAFE TOSTADO COLOMBIANO CON MELENA DE LEON X 180 G</p>
+      <p class="precio">$25.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/cafe3.webp" alt="Batidor" />
+      <p>BATIDOR ESPUMADOR CAFE</p>
+      <p class="precio">$8.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/cafe4.webp" alt="Prensa" />
+      <p>PRENSA FRANCESA C/ BASE CORCHO CAFE</p>
+      <p class="precio">$58.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup16.webp" alt="Yerba 6" />
+      <p>CAFE VERDE X 30 COMPRIMIDOS</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const productos = document.querySelectorAll(".producto");
+    const botonesAgregar = document.querySelectorAll(".agregar-btn");
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalTitle = document.getElementById("modal-title");
+    const modalPrice = document.getElementById("modal-price");
+    const modalInfo = document.getElementById("modal-info");
+    const closeBtn = document.getElementById("closeModal");
+
+    const botonCarritoWsp = document.getElementById("boton-carrito-wsp");
+    const carritoSidebar = document.getElementById("carrito-sidebar");
+    const fondoOscuro = document.getElementById("fondo-oscuro");
+    const listaCarrito = document.getElementById("lista-carrito");
+    const totalEl = document.getElementById("total");
+    const enviarBtn = document.getElementById("enviar-pedido");
+
+    const productosData = [
+      {
+        nombre: "CAFE CON COLAGENO & MELENA DE LEON X 180 G",
+        precio: "$25.000",
+        descripcion: "Una combinación única que estimula tus sentidos...",
+        imagen: "img/cafe1.webp"
+      },
+      {
+        nombre: "CAFE TOSTADO COLOMBIANO CON MELENA DE LEON X 180 G",
+        precio: "$25.000",
+        descripcion: "Descubrí la perfecta sinergia entre el sabor intenso...",
+        imagen: "img/cafe2.webp"
+      },
+      {
+        nombre: "BATIDOR ESPUMADOR CAFE",
+        precio: "$8.900",
+        descripcion: "Colores disponibles: Marron, Celeste, Rosa.",
+        imagen: "img/cafe3.webp"
+      },
+      {
+        nombre: "PRENSA FRANCESA C/ BASE CORCHO CAFE",
+        precio: "$58.000",
+        descripcion: "Ideal para preparar café o té de forma sencilla.",
+        imagen: "img/cafe4.webp"
+      },
+      {
+        nombre: "CAFE VERDE X 30 COMPRIMIDOS",
+        precio: "$6.800",
+        descripcion: "El café verde, sin tostar ni torrar, es un gran aliado en un plan de descenso de peso. Genera saciedad, acelera la combustión de las grasas, es diurético y mejora la circulación y la celulitis. Sumadas a las propiedades estimulantes y antioxidantes de la cafeína, el café verde es rico en una sustancia llamada Ácido clorogénico cuya acción principal es modular la velocidad de absorción de los azúcares en el organismo, por lo cual prolonga la sensación de saciedad, disminuyendo el apetito. La asociación cafeína - ácido clorogénico incrementa la velocidad de combustión de los alimentos consumidos (lo que se conoce popularmente como “quemar grasas”), colaborando así también al descenso de peso. Las formas de tomar el café verde son variadas; desde el grano triturado en decocción por 10 a 15 minutos o en saquitos en infusión o los comprimidos o caramelos. Cualquiera de las presentaciones debe ingerirse 30 minutos antes de cada comida, dándole el tiempo necesario para comenzar a actuar en nuestro aparato digestivo.",
+        imagen: "img/sup16.webp"
+      }
+    ];
+
+
+    function formatearNumero(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    productos.forEach((producto, i) => {
+      producto.addEventListener("click", (e) => {
+        if (e.target.classList.contains("agregar-btn")) return;
+        const data = productosData[i];
+        modalImg.src = data.imagen;
+        modalTitle.textContent = data.nombre;
+        modalPrice.textContent = data.precio;
+        modalInfo.textContent = data.descripcion;
+        modal.style.display = "flex";
+      });
+    });
+
+    botonesAgregar.forEach((btn, i) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const producto = productosData[i];
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        // Agregar producto con cantidad 1 o incrementar si ya existe
+        const index = carrito.findIndex(p => p.nombre === producto.nombre);
+        if (index !== -1) {
+          carrito[index].cantidad += 1;
+        } else {
+          carrito.push({ ...producto, cantidad: 1 });
+        }
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        alert(`${producto.nombre} agregado al pedido`);
+        actualizarSidebar();
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Función para mostrar productos en el sidebar con cantidad, subtotal y botones
+    function actualizarSidebar() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      listaCarrito.innerHTML = "";
+      let total = 0;
+
+      if (carrito.length === 0) {
+        listaCarrito.innerHTML = "<p>No hay productos en el pedido.</p>";
+        totalEl.textContent = "Total: $0";
+        return;
+      }
+
+      carrito.forEach((producto, i) => {
+        const div = document.createElement("div");
+        div.classList.add("carrito-producto");
+
+        // Extraemos precio numérico para cálculo
+        const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+
+        div.innerHTML = `
+          <p><strong>${producto.nombre}</strong></p>
+          <p>Precio unitario: ${producto.precio}</p>
+          <p>
+            Cantidad: 
+            <button class="menos" data-index="${i}">-</button>
+            <span class="cantidad">${producto.cantidad}</span>
+            <button class="mas" data-index="${i}">+</button>
+          </p>
+          <p>Subtotal: $${formatearNumero(precioNum * producto.cantidad)}</p>
+          <button class="eliminar" data-index="${i}" style="background:#e74c3c; color:#fff; border:none; border-radius:4px; cursor:pointer; padding:2px 6px;">Eliminar</button>
+        `;
+        listaCarrito.appendChild(div);
+
+        total += precioNum * producto.cantidad;
+      });
+
+      totalEl.textContent = `Total: $${formatearNumero(total)}`;
+
+      // Eventos para botones +, -, eliminar
+      document.querySelectorAll(".mas").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.getAttribute("data-index");
+          const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+          carrito[idx].cantidad += 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarSidebar();
+        };
+      });
+
+      document.querySelectorAll(".menos").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.getAttribute("data-index");
+          const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+          if (carrito[idx].cantidad > 1) {
+            carrito[idx].cantidad -= 1;
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            actualizarSidebar();
+          }
+        };
+      });
+
+      document.querySelectorAll(".eliminar").forEach(btn => {
+        btn.onclick = () => {
+          const idx = btn.getAttribute("data-index");
+          let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+          carrito.splice(idx, 1);
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarSidebar();
+        };
+      });
+    }
+
+    botonCarritoWsp.addEventListener("click", () => {
+      carritoSidebar.classList.toggle("mostrar");
+      fondoOscuro.classList.toggle("mostrar");
+      actualizarSidebar();
+    });
+
+    fondoOscuro.addEventListener("click", () => {
+      carritoSidebar.classList.remove("mostrar");
+      fondoOscuro.classList.remove("mostrar");
+    });
+
+    enviarBtn.addEventListener("click", () => {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      if (carrito.length === 0) {
+        alert("No hay productos para enviar.");
+        return;
+      }
+
+      let mensaje = "Hola, quiero hacer el siguiente pedido:\n";
+      let total = 0;
+
+      carrito.forEach((producto, i) => {
+        const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+        total += precioNum * producto.cantidad;
+
+        mensaje += `${i + 1}. ${producto.nombre} x${producto.cantidad} - $${formatearNumero(precioNum * producto.cantidad)}\n`;
+      });
+
+      const totalFormateado = formatearNumero(total);
+      mensaje += `Total: $${totalFormateado}`;
+
+      const mensajeCodificado = encodeURIComponent(mensaje);
+      const telefono = "5491167186562";
+      const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+      window.open(url, "_blank");
+
+      localStorage.removeItem("carrito");
+      actualizarSidebar();
+      carritoSidebar.classList.remove("mostrar");
+    });
+
+    actualizarSidebar();
+  });
+  document.querySelectorAll('.producto .precio').forEach(p => {
+    const textoPrecio = p.textContent.trim();
+    let numero = textoPrecio.replace(/[^\d]/g, '');
+    let precioNum = parseInt(numero, 10);
+    
+    if (!isNaN(precioNum)) {
+      // Calculamos precio "antes" mayor +10%
+      let precioAntes = Math.round(precioNum * 1.1);
+      const formatearPrecio = n => '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      
+      p.innerHTML = `
+        <span class="precio-original">${formatearPrecio(precioAntes)}</span>
+        <span class="precio-descuento">${textoPrecio}</span>
+      `;
+    }
+  });
+
+  const modalImage = document.querySelector('.modal-content img');
+  const fullscreenOverlay = document.createElement('div');
+  fullscreenOverlay.className = 'fullscreen-img-overlay';
+
+  const fullscreenImage = document.createElement('img');
+  fullscreenOverlay.appendChild(fullscreenImage);
+
+  const closeBtn = document.createElement('div');
+  closeBtn.className = 'fullscreen-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.display = 'none';  // <-- Añade esta línea
+  document.body.appendChild(fullscreenOverlay);
+  document.body.appendChild(closeBtn);
+
+  let scale = 1;
+  let originX = 0;
+  let originY = 0;
+  let isDragging = false;
+  let startX, startY;
+  let currentX = 0;
+  let currentY = 0;
+
+  modalImage.addEventListener('click', () => {
+    fullscreenImage.src = modalImage.src;
+    fullscreenOverlay.classList.add('active');
+    closeBtn.style.display = 'flex';
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  });
+
+  // Cerrar con el botón
+  closeBtn.addEventListener('click', () => {
+    fullscreenOverlay.classList.remove('active');
+    closeBtn.style.display = 'none';
+    resetTransform();
+  });
+
+  // Zoom con rueda mouse
+  fullscreenOverlay.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    scale += delta;
+    scale = Math.min(Math.max(1, scale), 5);
+    updateTransform();
+  });
+
+  // Arrastrar la imagen (mouse)
+  fullscreenOverlay.addEventListener('mousedown', e => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - currentX;
+    startY = e.clientY - currentY;
+    fullscreenOverlay.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    fullscreenOverlay.style.cursor = 'grab';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    updateTransform();
+  });
+
+  // Función para actualizar transformaciones CSS
+  function updateTransform() {
+    fullscreenImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+  }
+
+  // Reset transform al cerrar
+  function resetTransform() {
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  }
+
+
+</script>
+
+
+</body>
+</html>
