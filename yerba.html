@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-arrow">←</a>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <img src="img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto">
+      <img src="img/yerba1.webp" alt="Yerba 1" />
+      <p>YERBA ORGANICA PURA X 500 G</p>
+      <p class="precio">$5.950</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba2.webp" alt="Yerba 2" />
+      <p>YERBA MATE MANZANILLA, BOLDO Y MENTA X 500 G</p>
+      <p class="precio">$5.950</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba3.webp" alt="Yerba 3" />
+      <p>YERBA MATE MOLIENDA FINA X 500 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba4.jpg" alt="Yerba 4" />
+      <p>YERBA MATE MANGO MENTA DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba5.webp" alt="Yerba 5" />
+      <p>YERBA MATE COCO NARANJA DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba6.webp" alt="Yerba 6" />
+      <p>YERBA MATE FRUTAL DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba7.webp" alt="Yerba 7" />
+      <p>YERBA MATE HOJAS DOYPACK X 250 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba8.webp" alt="Yerba 8" />
+      <p>YERBA MATE MOLIENDA FINA DOYPACK X 250 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba9.webp" alt="Yerba 9" />
+      <p>YERBA MATE HERBAL DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba10.webp" alt="Yerba 10" />
+      <p>YERBA MATE CITRICO DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba11.webp" alt="Yerba 11" />
+      <p>YERBA MATE CHAI DOYPACK X 150 G</p>
+      <p class="precio">$4.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba12.webp" alt="Yerba 12" />
+      <p>YERBA COMPUESTA #1 SUAVE X 500 G</p>
+      <p class="precio">$3.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba13.webp" alt="Yerba 13" />
+      <p>YERBA COMPUESTA #2 MEMORIUM X 500 G</p>
+      <p class="precio">$3.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba14.webp" alt="Yerba 14" />
+      <p>YERBA COMPUESTA #3 VITALIS X 500 G</p>
+      <p class="precio">$3.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba15.webp" alt="Yerba 15" />
+      <p>YERBA COMPUESTA #4 MODELA X 500 G</p>
+      <p class="precio">$3.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/yerba16.webp" alt="Yerba 16" />
+      <p>YERBA COMPUESTA #5 BIENESTAR X 500 G</p>
+      <p class="precio">$3.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const productos = document.querySelectorAll(".producto");
+  const botonesAgregar = document.querySelectorAll(".agregar-btn");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalPrice = document.getElementById("modal-price");
+  const modalInfo = document.getElementById("modal-info");
+  const closeBtn = document.getElementById("closeModal");
+
+  const botonCarritoWsp = document.getElementById("boton-carrito-wsp");
+  const carritoSidebar = document.getElementById("carrito-sidebar");
+  const fondoOscuro = document.getElementById("fondo-oscuro");
+  const listaCarrito = document.getElementById("lista-carrito");
+  const totalEl = document.getElementById("total");
+  const enviarBtn = document.getElementById("enviar-pedido");
+
+  const productosData = [
+  {
+    nombre: "YERBA ORGANICA PURA X 500 G",
+    precio: "$5.950",
+    descripcion: "Disfrutá de nuestra yerba mate orgánica certificada, cuidadosamente añejada durante 18 meses en dockers y secada al estilo barbacua. Esta yerba mate ofrece un sabor robusto y auténtico sin producir acidez, garantizando una experiencia suave y placentera con cada mate.",
+    imagen: "img/yerba1.webp"
+  },
+  {
+    nombre: "YERBA MATE MANZANILLA, BOLDO Y MENTA X 500 G",
+    precio: "$5.950",
+    descripcion: "Este blend único combina el vigor de la yerba mate con las propiedades calmantes de la manzanilla, la frescura de la menta peperina y el apoyo digestivo del boldo. Ideal para aliviar las molestias estomacales y promover un bienestar general. Perfecta para disfrutar en cualquier momento del día. Producto 100% certificado.",
+    imagen: "img/yerba2.webp"
+  },
+  {
+    nombre: "YERBA MATE MOLIENDA FINA X 500 G",
+    precio: "$4.200",
+    descripcion: "Estacionada 18 meses, creada con esmero y precisión, presenta una molienda fina que resalta la frescura e intensidad de la yerba mate. Textura suave y un sabor robusto que se fusiona perfectamente con agua caliente, ofreciendo una infusión deliciosa y equilibrada.",
+    imagen: "img/yerba3.webp"
+  },
+  {
+    nombre: "YERBA MATE MANGO MENTA DOYPACK X 150 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, menta, chips de banana & mango. Este blend único combina la vivacidad de la yerba mate con la frescura de la menta y el sabor tropical y dulce del mango y la banana. Cada sorbo te lleva a una experiencia sensorial vibrante y deliciosa, perfecta para cualquier momento del día.",
+    imagen: "img/yerba4.jpg"
+  },
+  {
+    nombre: "YERBA MATE COCO NARANJA DOYPACK X 150 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, coco escamas, chips de banana & cáscara de naranja. Este blend ofrece una explosión de sabores tropicales, combinando la frescura de la yerba mate con la dulzura cremosa del coco, la suavidad de la banana y el toque cítrico de la naranja.",
+    imagen: "img/yerba5.webp"
+  },
+  {
+    nombre: "YERBA MATE FRUTAL DOYPACK X 150 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, hibisco, arándano, cascarilla de rosa mosqueta, manzana & naranja. Esta mezcla única ofrece un sabor vibrante y frutal, donde la energía de la yerba mate se fusiona con la acidez del hibisco y el arándano, el toque floral de la rosa mosqueta, y la dulzura de la manzana y la naranja. Perfecto para un momento revitalizante en cualquier hora del día.",
+    imagen: "img/yerba6.webp"
+  },
+  {
+    nombre: "YERBA MATE HOJAS DOYPACK X 250 G",
+    precio: "$4.200",
+    descripcion: "Molienda especial, 100% hojas despaladas. Yerba mate en hojas despaladas con bajo contenido de polvo, una opción única para aquellos que valoran la pureza y la conveniencia. Este producto de alta calidad conserva todo el sabor auténtico de la yerba mate. Descubrí la armonía de la naturaleza en cada sorbo.",
+    imagen: "img/yerba7.webp"
+  },
+  {
+    nombre: "YERBA MATE MOLIENDA FINA DOYPACK X 250 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate elaborada con palo, molienda fina. Creada con esmero y precisión, presenta una molienda fina que resalta la frescura e intensidad de la yerba mate. Textura suave y un sabor robusto que se fusiona perfectamente con agua caliente, ofreciendo una infusión deliciosa y equilibrada.",
+    imagen: "img/yerba8.webp"
+  },
+  {
+    nombre: "YERBA MATE HERBAL DOYPACK X 150 G ",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, menta, poleo, manzanilla, anís verde & boldo. Este blend especial combina la energía de la yerba mate con la frescura de la menta y el poleo, la suavidad de la manzanilla, el toque aromático del anís verde y el respaldo digestivo del boldo. Perfecto para disfrutar después de las comidas o en cualquier momento del día, ofreciendo un sabor equilibrado y revitalizante.",
+    imagen: "img/yerba9.webp"
+  },
+  {
+    nombre: "YERBA MATE CITRICO DOYPACK X 150 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, menta, jengibre & cáscara de limón. Este blend ofrece un equilibrio perfecto entre la energía de la yerba mate, la frescura de la menta, el toque picante del jengibre y la vivacidad cítrica del limón.",
+    imagen: "img/yerba10.webp"
+  },
+  {
+    nombre: "YERBA MATE CHAI DOYPACK X 150 G",
+    precio: "$4.200",
+    descripcion: "Yerba Mate, canela, jengibre, pimienta rosa, anís estrellado & cardamomo. Este blend ofrece una combinación cálida y picante, con la energía de la yerba mate, el dulzor de la canela y la intensidad del jengibre, la pimienta rosa y el anís estrellado, complementados por el toque aromático del cardamomo.",
+    imagen: "img/yerba11.webp"
+  },
+  {
+    nombre: "YERBA COMPUESTA #1 SUAVE X 500 G",
+    precio: "$3.500",
+    descripcion: "Yerba Mate & Manzanilla. Una combinación perfecta de energía y relajación que no produce acidez. Este blend único une el vigor de la yerba mate con las propiedades calmantes de la manzanilla, ofreciendo un sabor equilibrado y reconfortante.",
+    imagen: "img/yerba12.webp"
+  },
+  {
+    nombre: "YERBA COMPUESTA #2 MEMORIUM X 500 G",
+    precio: "$3.500",
+    descripcion: "Yerba Mate, manzanilla & Ginkgo Biloba Este blend único ofrece un sabor suave y refrescante, con el vigor característico de la yerba mate, el toque calmante de la manzanilla y el sutil equilibrio del Ginkgo Biloba. Perfecto para disfrutar en cualquier momento del día sin preocuparte por la acidez.",
+    imagen: "img/yerba13.webp"
+  },
+  {
+    nombre: "YERBA COMPUESTA #3 VITALIS X 500 G",
+    precio: "$3.500",
+    descripcion: "Yerba Mate, manzanilla, ginseng, guaraná, menta & fenogreco. Este blend ofrece un equilibrio perfecto entre energía y frescura, con el vigor de la yerba mate y la guaraná, el impulso del ginseng y la frescura de la menta. La manzanilla está especialmente seleccionada para evitar la acidez.",
+    imagen: "img/yerba14.webp"
+  },
+  {
+    nombre: "YERBA COMPUESTA #4 MODELA X 500 G",
+    precio: "$3.500",
+    descripcion: "Yerba Mate, manzanilla, té rojo, menta, hisopo, incayuyo & fucus. Esta mezcla ofrece un equilibrio perfecto entre energía y bienestar. La yerba mate y el té rojo potencian el metabolismo, mientras que la menta refresca y la manzanilla evita la acidez. El hisopo, el incayuyo y el fucus aportan propiedades beneficiosas para la salud, ayudando en el proceso de adelgazamiento.",
+    imagen: "img/yerba15.webp"
+  },
+  {
+    nombre: "YERBA COMPUESTA #5 BIENESTAR X 500 G",
+    precio: "$3.500",
+    descripcion: "Yerba Mate, manzanilla, menta piperita, boldo, anís verde & poleo. Esta combinación ofrece un equilibrio perfecto para apoyar tu salud digestiva. La yerba mate energiza mientras la manzanilla evita la acidez, y la menta piperita refresca. El boldo, el anís verde y el poleo contribuyen a mejorar la digestión y aliviar las molestias estomacales. Perfecta para disfrutar después de las comidas.",
+    imagen: "img/yerba16.webp"
+  }
+];
+
+
+  function formatearNumero(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  productos.forEach((producto, i) => {
+    producto.addEventListener("click", (e) => {
+      if (e.target.classList.contains("agregar-btn")) return;
+      const data = productosData[i];
+      modalImg.src = data.imagen;
+      modalTitle.textContent = data.nombre;
+      modalPrice.textContent = data.precio;
+      modalInfo.textContent = data.descripcion;
+      modal.style.display = "flex";
+    });
+  });
+
+  botonesAgregar.forEach((btn, i) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const producto = productosData[i];
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+      // NUEVO: agregar producto con cantidad 1 o incrementar si ya existe
+      const index = carrito.findIndex(p => p.nombre === producto.nombre);
+      if (index !== -1) {
+        carrito[index].cantidad += 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      alert(`${producto.nombre} agregado al pedido`);
+      actualizarSidebar();
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // FUNCION ACTUALIZADA PARA MOSTRAR CANTIDAD, BOTONES DE +, -, ELIMINAR
+  function actualizarSidebar() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    listaCarrito.innerHTML = "";
+    let total = 0;
+
+    if (carrito.length === 0) {
+      listaCarrito.innerHTML = "<p>No hay productos en el pedido.</p>";
+      totalEl.textContent = "Total: $0";
+      return;
+    }
+
+    carrito.forEach((producto, i) => {
+      const div = document.createElement("div");
+      div.classList.add("carrito-producto");
+
+      // Extraemos precio numérico para cálculo
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+
+      div.innerHTML = `
+        <p><strong>${producto.nombre}</strong></p>
+        <p>Precio unitario: ${producto.precio}</p>
+        <p>
+          Cantidad: 
+          <button class="menos" data-index="${i}">-</button>
+          <span class="cantidad">${producto.cantidad}</span>
+          <button class="mas" data-index="${i}">+</button>
+        </p>
+        <p>Subtotal: $${formatearNumero(precioNum * producto.cantidad)}</p>
+        <button class="eliminar" data-index="${i}" style="background:#e74c3c; color:#fff; border:none; border-radius:4px; cursor:pointer; padding:2px 6px;">Eliminar</button>
+      `;
+      listaCarrito.appendChild(div);
+
+      total += precioNum * producto.cantidad;
+    });
+
+    totalEl.textContent = `Total: $${formatearNumero(total)}`;
+
+    // Eventos para botones +, -, eliminar
+    document.querySelectorAll(".mas").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito[idx].cantidad += 1;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+
+    document.querySelectorAll(".menos").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        if (carrito[idx].cantidad > 1) {
+          carrito[idx].cantidad -= 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarSidebar();
+        }
+      };
+    });
+
+    document.querySelectorAll(".eliminar").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.splice(idx, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+  }
+
+  botonCarritoWsp.addEventListener("click", () => {
+    carritoSidebar.classList.toggle("mostrar");
+    fondoOscuro.classList.toggle("mostrar");
+    actualizarSidebar();
+  });
+
+  fondoOscuro.addEventListener("click", () => {
+    carritoSidebar.classList.remove("mostrar");
+    fondoOscuro.classList.remove("mostrar");
+  });
+
+  enviarBtn.addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0) {
+      alert("No hay productos para enviar.");
+      return;
+    }
+
+    let mensaje = "Hola, quiero hacer el siguiente pedido:\n";
+    let total = 0;
+
+    carrito.forEach((producto, i) => {
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+      total += precioNum * producto.cantidad;
+
+      mensaje += `${i + 1}. ${producto.nombre} x${producto.cantidad} - $${formatearNumero(precioNum * producto.cantidad)}\n`;
+    });
+
+    const totalFormateado = formatearNumero(total);
+    mensaje += `Total: $${totalFormateado}`;
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const telefono = "5491167186562";
+    const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+    window.open(url, "_blank");
+
+    localStorage.removeItem("carrito");
+    actualizarSidebar();
+    carritoSidebar.classList.remove("mostrar");
+  });
+
+  actualizarSidebar();
+});
+document.querySelectorAll('.producto .precio').forEach(p => {
+    const textoPrecio = p.textContent.trim();
+    let numero = textoPrecio.replace(/[^\d]/g, '');
+    let precioNum = parseInt(numero, 10);
+    
+    if (!isNaN(precioNum)) {
+      // Calculamos precio "antes" mayor +10%
+      let precioAntes = Math.round(precioNum * 1.1);
+      const formatearPrecio = n => '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      
+      p.innerHTML = `
+        <span class="precio-original">${formatearPrecio(precioAntes)}</span>
+        <span class="precio-descuento">${textoPrecio}</span>
+      `;
+    }
+  });
+  const modalImage = document.querySelector('.modal-content img');
+  const fullscreenOverlay = document.createElement('div');
+  fullscreenOverlay.className = 'fullscreen-img-overlay';
+
+  const fullscreenImage = document.createElement('img');
+  fullscreenOverlay.appendChild(fullscreenImage);
+
+  const closeBtn = document.createElement('div');
+  closeBtn.className = 'fullscreen-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.display = 'none';  // <-- Añade esta línea
+  document.body.appendChild(fullscreenOverlay);
+  document.body.appendChild(closeBtn);
+
+  let scale = 1;
+  let originX = 0;
+  let originY = 0;
+  let isDragging = false;
+  let startX, startY;
+  let currentX = 0;
+  let currentY = 0;
+
+  modalImage.addEventListener('click', () => {
+    fullscreenImage.src = modalImage.src;
+    fullscreenOverlay.classList.add('active');
+    closeBtn.style.display = 'flex';
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  });
+
+  // Cerrar con el botón
+  closeBtn.addEventListener('click', () => {
+    fullscreenOverlay.classList.remove('active');
+    closeBtn.style.display = 'none';
+    resetTransform();
+  });
+
+  // Zoom con rueda mouse
+  fullscreenOverlay.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    scale += delta;
+    scale = Math.min(Math.max(1, scale), 5);
+    updateTransform();
+  });
+
+  // Arrastrar la imagen (mouse)
+  fullscreenOverlay.addEventListener('mousedown', e => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - currentX;
+    startY = e.clientY - currentY;
+    fullscreenOverlay.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    fullscreenOverlay.style.cursor = 'grab';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    updateTransform();
+  });
+
+  // Función para actualizar transformaciones CSS
+  function updateTransform() {
+    fullscreenImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+  }
+
+  // Reset transform al cerrar
+  function resetTransform() {
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  }
+</script>
+
+</body>
+</html>

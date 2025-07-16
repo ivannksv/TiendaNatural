@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-arrow">←</a>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <img src="img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto">
+      <img src="img/sup1.webp" alt="COLAGENO HIDROLIZADO EN POLVO X 200 G" />
+      <p>COLAGENO HIDROLIZADO TIPO I, II y III EN POLVO SIN SABOR</p>
+      <p class="precio">$17.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup2.webp" alt="COLAGENO EN COMPRIMIDOS X 30 COMPRIMIDOS" />
+      <p>COLAGENO EN COMPRIMIDOS</p>
+      <p class="precio">$6.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup3.webp" alt="COLAGENO HIDROLIZADO MAGNESIO, GARCINIA & GUARANA X 200 G" />
+      <p>COLAGENO HIDROLIZADO , TE BLANCO, CALCIO, VIT C, MAGNESIO, GARCINIA & GUARANA EN POLVO</p>
+      <p class="precio">$17.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup4.webp" alt="COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS" />
+      <p>COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS</p>
+      <p class="precio">$8.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup5.webp" alt="COLAGENO HIDROLIZADO, ACIDO HIALURONICO, CURCUMA & MAGNESIO X 200 G" />
+      <p>COLAGENO HIDROLIZADO, ACIDO HIALURONICO, VIT C, CURCUMA & MAGNESIO EN POLVO</p>
+      <p class="precio">$25.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup6.webp" alt="COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC X 200 G" />
+      <p>COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC</p>
+      <p class="precio">$22.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup7.webp" alt="COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G" />
+      <p>COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G</p>
+      <p class="precio">$31.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup8.webp" alt="COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G" />
+      <p>GOLDFISH COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G</p>
+      <p class="precio">$25.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup9.webp" alt="CITRATO DE MAGNESIO X 180 G" />
+      <p>CITRATO DE MAGNESIO X 180 G</p>
+      <p class="precio">$22.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup10.webp" alt="MELENA DE LEON X 40 G" />
+      <p>MELENA DE LEON X 40 G</p>
+      <p class="precio">$26.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup11.webp" alt="ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML" />
+      <p>ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML</p>
+      <p class="precio">$10.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup12.webp" alt="SPIRULINA EN POLVO X 100 G" />
+      <p>SPIRULINA EN POLVO X 100 G </p>
+      <p class="precio">$17.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup13.webp" alt="MANZANILLA, TILO, MELISA, SCHIZANDRA + VIT B1 y B6 X 30 COMPRIMIDOS" />
+      <p>MANZANILLA, TILO, MELISA, SCHIZANDRA + VIT B1 y B6 X 30 COMPRIMIDOS</p>
+      <p class="precio">$6.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/sup14.webp" alt="VITAMINA C X 30 COMPRIMIDOS" />
+      <p>VITAMINA C X 30 COMPRIMIDOS</p>
+      <p class="precio">$4.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const productos = document.querySelectorAll(".producto");
+  const botonesAgregar = document.querySelectorAll(".agregar-btn");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalPrice = document.getElementById("modal-price");
+  const modalInfo = document.getElementById("modal-info");
+  const closeBtn = document.getElementById("closeModal");
+
+  const botonCarritoWsp = document.getElementById("boton-carrito-wsp");
+  const carritoSidebar = document.getElementById("carrito-sidebar");
+  const fondoOscuro = document.getElementById("fondo-oscuro");
+  const listaCarrito = document.getElementById("lista-carrito");
+  const totalEl = document.getElementById("total");
+  const enviarBtn = document.getElementById("enviar-pedido");
+
+  
+
+  const productosData = [ 
+    {
+      nombre: "COLAGENO HIDROLIZADO TIPO I, II y III EN POLVO SIN SABOR",
+      precio: "$17.000",
+      descripcion: "Suplemento en Polvo para la Salud, Belleza y Piel. Descubre nuestro suplemento en polvo que combina los beneficios de los péptidos de colágeno tipo I, II y III hidrolizado. Formulado específicamente para apoyar la salud, belleza y piel, nuestra mezcla ofrece una serie de beneficios integrales para tu bienestar.",
+      imagen: "img/sup1.webp"
+    },
+    {
+      nombre: "COLAGENO EN COMPRIMIDOS",
+      precio: "$6.300",
+      descripcion: "INGESTA DIARIA RECOMENDADA 1 a 2 comprimidos por día. Composición: Cada comprimido contiene: Colágeno 250 mg; Vitamina C 10 mg, Vitamina E 50% 4mg; Carbonato de Calcio 50 mg, Óxido de Magnesio 50 mg; Excipientes : Celulosa microcristalina (AGC), Lactosa, Polivinilpirrolidona (AGC) , Dióxido de sílicio (ANAH), Estearato de Magnesio c.s.p. 810 mg. CONTIENE DERIVADOS DE LECHE",
+      imagen: "img/sup2.webp"
+    },
+    {
+      nombre: "COLAGENO HIDROLIZADO, TE BLANCO, CALCIO, VIT C, MAGNESIO, GARCINIA & GUARANA EN POLVO",
+      precio: "$17.500",
+      descripcion: "Adelgazante, suplemento dietario en polvo a base de Calcio, Vitamina C, Magnesio, Fibra, Colágeno hidrolizado, Té Blanco, Garcinia y Guaraná. Sabor Guaraná. Para adultos",
+      imagen: "img/sup3.webp"
+    },
+    {
+      nombre: "COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS",
+      precio: "$8.300",
+      descripcion: "Colágeno + Cartílago de Tiburón con Calcio, Magnesio, Zinc y Vitamina D. Suplemento Integral para la Salud Ósea, Articular y General. Descubre nuestro suplemento avanzado que combina colágeno hidrolizado, cartílago de tiburón con calcio, magnesio, zinc y vitamina D, formulado específicamente para mejorar tu salud ósea, articular y general. Nuestra fórmula única ofrece una serie de beneficios integrales para tu bienestar",
+      imagen: "img/sup4.webp"
+    },
+    {
+      nombre: "COLAGENO HIDROLIZADO, ACIDO HIALURONICO, VIT C, CURCUMA & MAGNESIO EN POLVO",
+      precio: "$25.700",
+      descripcion: "COLÁGENO HIDROLIZADO + Ácido Hialurónico, Vitamina C, Cúrcuma y Magnesio. Sabor Frutos Rojos. Suplemento dietario en polvo a base de Colágeno Hidrolizado, Ácido hialurónico, y Vitamina C, con Cúrcuma y Magnesio. Sabor Frutos Rojos. Para adultos",
+      imagen: "img/sup5.webp"
+    },
+    {
+      nombre: "COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC",
+      precio: "$22.600",
+      descripcion: "COLÁGENO HIDROLIZADO + Vit C, Calcio, Magnesio y Zinc. Sabor Frutos Tropicales. Suplemento dietario en polvo a base de Colágeno hidrolizado, Magnesio, Calcio, Zinc y Vitamina C. Sabor Frutos Tropicales. Para adultos",
+      imagen: "img/sup6.webp"
+    },
+    {
+      nombre: "COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G",
+      precio: "$31.000",
+      descripcion: "COLÁGENO HIDROLIZADO, Té verde Matcha, Coenzima Q10 y Resveratrol. Sabor citrus. Suplemento dietario en polvo a base de Colágeno hidrolizado y Vitamina C, con Té verde matcha, Coenzima Q10 y Resveratrol. Sabor citrus. Para adultos.",
+      imagen: "img/sup7.webp"
+    },
+    {
+      nombre: "GOLDFISH COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G",
+      precio: "$25.700",
+      descripcion: "Colágeno Hidrolizado + Ácido Hialurónico, Vitamina C, Cúrcuma y Magnesio - Sin Sabor Goldfish. Este suplemento en polvo está formulado especialmente para adultos que buscan mejorar su bienestar general y mantener la salud de su piel, cabello y articulaciones.",
+      imagen: "img/sup8.webp"
+    },
+    {
+      nombre: "CITRATO DE MAGNESIO X 180 G",
+      precio: "$22.300",
+      descripcion: "Suplemento dietario en polvo a base de Vitamina C, Magnesio y Zinc. Este mineral esencial, ofreciendo una forma altamente absorbible y efectiva para mejorar tu bienestar general.",
+      imagen: "img/sup9.webp"
+    },
+    {
+      nombre: "MELENA DE LEON X 40 G ",
+      precio: "$26.000",
+      descripcion: "Suplemento en Polvo de Melena de León para Enfoque, Concentración y Memoria. Descubre nuestro suplemento en polvo que combina los beneficios de la Melena de León y el formulado específicamente para mejorar el enfoque, la concentración y la memoria. Sin saborizantes agregados, este suplemento puro se puede añadir fácilmente a tus bebidas o alimentos favoritos, proporcionando una forma conveniente de potenciar tu rendimiento mental y bienestar diario",
+      imagen: "img/sup10.webp"
+    },
+    {
+      nombre: "ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML",
+      precio: "$10.200",
+      descripcion: "Propiedades y Beneficios:\n\nFuente de Ácidos Grasos Saludables: El aceite de coco es una excelente fuente de ácidos grasos saturados de cadena media (AGCM), como el ácido láurico. Estos ácidos grasos son fácilmente digeribles y se metabolizan rápidamente en energía, proporcionando un impulso rápido y sostenido de energía.\n\nPromueve la Salud Cardiovascular: A pesar de ser rico en grasas saturadas, varios estudios sugieren que el aceite de coco puede tener efectos beneficiosos para la salud cardiovascular al aumentar el colesterol HDL (colesterol 'bueno') y mejorar la relación entre el colesterol HDL y LDL (colesterol 'malo').\n\nApoyo a la Digestión: El aceite de coco puede ayudar a mejorar la salud digestiva al promover la absorción de nutrientes y favorecer la salud de la microbiota intestinal. Sus propiedades antimicrobianas también pueden ayudar a combatir bacterias dañinas en el tracto digestivo.\n\nBeneficios para la Piel y el Cabello: Gracias a su alto contenido de ácido láurico y antioxidantes, el aceite de coco puede ayudar a hidratar y nutrir la piel y el cabello, dejándolos suaves, brillantes y saludables.",
+      imagen: "img/sup11.webp"
+    },
+    {
+      nombre: "SPIRULINA EN POLVO X 100 G ",
+      precio: "$17.700",
+      descripcion: "SPIRULINA POLVO\n\nCon más de un 60% de proteína vegetal, la Spirulina es una de las fuentes proteínicas naturales más ricas, con los ocho aminoácidos esenciales y los nueve no esenciales.\n\nTiene efecto antioxidante por su aporte de Beta-carotenos; enzimas que aportan equilibrio al metabolismo y a la digestión, activando el sistema inmunológico. Aumenta la resistencia y retarda el proceso de envejecimiento.\n\nEs un complejo vitamínico y mineral natural. Contiene Ácido gamma-linolénico; valioso apoyo en la menopausia. Es muy rica en hierro en una forma de fácil absorción. La gran cantidad de sustancias vitales que se encuentran en la Spirulina activan el sistema de defensa.\n\nAdemás, se compensan las eventuales deficiencias alimentarias. La resistencia aumenta y el cuerpo puede recuperarse con mayor rapidez después de realizar esfuerzos físicos y mentales.",
+      imagen: "img/sup12.webp"
+    },
+    {
+      nombre: "MANZANILLA, TILO, MELISA, SCHIZANDRA + VIT B1 y B6 X 30 COMPRIMIDOS",
+      precio: "$6.300",
+      descripcion: "Beneficios Clave:\nRelajación y Bienestar: Las hierbas presentes en esta fórmula son ampliamente reconocidas por sus propiedades relajantes y sedantes suaves, ayudándote a calmar la mente y el cuerpo.\n\nSoporte al Sistema Nervioso: Las vitaminas del complejo B son imprescindibles para el correcto funcionamiento del sistema nervioso y el metabolismo energético, complementando la acción de las hierbas.\n\nAdaptógeno Natural: Este suplemento actúa como un adaptógeno, ayudando a tu organismo a adaptarse mejor a las tensiones diarias.\n\nModo de Uso:\nPara obtener los mejores resultados, se recomienda la ingesta de 1 comprimido antes de acostarse. Así podrás disfrutar de un descanso reparador cada noche.\n\nComposición:\nCada comprimido contiene: Manzanilla extr seco (Matricaria chamomilla), flores 90 mg; Tilo, extracto seco (Tilia platyphyllos Scop.), flores 60 mg; Melisa, extr seco (Melissa officinalis), hojas 50 mg; Schizandra, extr seco (Schizandra chinensis), fruto maduro seco 30 mg; Vitamina B6 0,40 mg; Vitamina B1 0,40 mg. Excipientes (Celulosa (AGC) Croscarmelosa (EST), Talco (AHAH) Dióxido de silicio coloidal (AGC)) csp 700 mg.",
+      imagen: "img/sup13.webp"
+    },
+    {
+      nombre: "VITAMINA C X 30 COMPRIMIDOS",
+      precio: "$4.700",
+      descripcion: "El ácido ascórbico (Vitamina C) interviene en varios procesos metabólicos y está presente en todas las unidades celulares animales y vegetales. Cumple innumerables funciones: Es un antioxidante eficaz . Interviene en la formación de tejido conectivo por actuar en la síntesis del colágeno, en la absorción del hierro y del ácido fólico en el intestino mejorando los estados anémicos. Interviene en la síntesis de corticoides por las glándulas suprarrenales. Colabora en los procesos de desintoxicación por parte del hígado. Ayuda a reparar y mantener el cartílago, los huesos y los dientes. Es indispensable a la hora de sanar heridas y formar tejido que ayuda a cicatrizar. Previene las enfermedades cardiacas ya que el ácido ascórbico disminuye el colesterol evitando que la grasa se adhiera a los vasos sanguíneos, reduciendo la posibilidad de sufrir infartos. De igual manera, ayuda a la absorción de hierro. Al combinar la Vitamina C con Zinc se forma una dupla que previene los resfriados comunes y los cuadros gripales disminuyendo la intensidad de los síntomas y duración de los mismos.",
+      imagen: "img/sup14.webp"
+    }
+  ];
+
+
+
+
+
+  function formatearNumero(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  productos.forEach((producto, i) => {
+    producto.addEventListener("click", (e) => {
+      if (e.target.classList.contains("agregar-btn")) return;
+      const data = productosData[i];
+      modalImg.src = data.imagen;
+      modalTitle.textContent = data.nombre;
+      modalPrice.textContent = data.precio;
+      modalInfo.textContent = data.descripcion;
+      modal.style.display = "flex";
+    });
+  });
+
+  botonesAgregar.forEach((btn, i) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const producto = productosData[i];
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+      // NUEVO: agregar producto con cantidad 1 o incrementar si ya existe
+      const index = carrito.findIndex(p => p.nombre === producto.nombre);
+      if (index !== -1) {
+        carrito[index].cantidad += 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      alert(`${producto.nombre} agregado al pedido`);
+      actualizarSidebar();
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // FUNCION ACTUALIZADA PARA MOSTRAR CANTIDAD, BOTONES DE +, -, ELIMINAR
+  function actualizarSidebar() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    listaCarrito.innerHTML = "";
+    let total = 0;
+
+    if (carrito.length === 0) {
+      listaCarrito.innerHTML = "<p>No hay productos en el pedido.</p>";
+      totalEl.textContent = "Total: $0";
+      return;
+    }
+
+    carrito.forEach((producto, i) => {
+      const div = document.createElement("div");
+      div.classList.add("carrito-producto");
+
+      // Extraemos precio numérico para cálculo
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+
+      div.innerHTML = `
+        <p><strong>${producto.nombre}</strong></p>
+        <p>Precio unitario: ${producto.precio}</p>
+        <p>
+          Cantidad: 
+          <button class="menos" data-index="${i}">-</button>
+          <span class="cantidad">${producto.cantidad}</span>
+          <button class="mas" data-index="${i}">+</button>
+        </p>
+        <p>Subtotal: $${formatearNumero(precioNum * producto.cantidad)}</p>
+        <button class="eliminar" data-index="${i}" style="background:#e74c3c; color:#fff; border:none; border-radius:4px; cursor:pointer; padding:2px 6px;">Eliminar</button>
+      `;
+      listaCarrito.appendChild(div);
+
+      total += precioNum * producto.cantidad;
+    });
+
+    totalEl.textContent = `Total: $${formatearNumero(total)}`;
+
+    // Eventos para botones +, -, eliminar
+    document.querySelectorAll(".mas").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito[idx].cantidad += 1;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+
+    document.querySelectorAll(".menos").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        if (carrito[idx].cantidad > 1) {
+          carrito[idx].cantidad -= 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarSidebar();
+        }
+      };
+    });
+
+    document.querySelectorAll(".eliminar").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.splice(idx, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+  }
+
+  botonCarritoWsp.addEventListener("click", () => {
+    carritoSidebar.classList.toggle("mostrar");
+    fondoOscuro.classList.toggle("mostrar");
+    actualizarSidebar();
+  });
+
+  fondoOscuro.addEventListener("click", () => {
+    carritoSidebar.classList.remove("mostrar");
+    fondoOscuro.classList.remove("mostrar");
+  });
+
+  enviarBtn.addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0) {
+      alert("No hay productos para enviar.");
+      return;
+    }
+
+    let mensaje = "Hola, quiero hacer el siguiente pedido:\n";
+    let total = 0;
+
+    carrito.forEach((producto, i) => {
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+      total += precioNum * producto.cantidad;
+
+      mensaje += `${i + 1}. ${producto.nombre} x${producto.cantidad} - $${formatearNumero(precioNum * producto.cantidad)}\n`;
+    });
+
+    const totalFormateado = formatearNumero(total);
+    mensaje += `Total: $${totalFormateado}`;
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const telefono = "5491167186562";
+    const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+    window.open(url, "_blank");
+
+    localStorage.removeItem("carrito");
+    actualizarSidebar();
+    carritoSidebar.classList.remove("mostrar");
+  });
+
+  actualizarSidebar();
+});
+document.querySelectorAll('.producto .precio').forEach(p => {
+    const textoPrecio = p.textContent.trim();
+    let numero = textoPrecio.replace(/[^\d]/g, '');
+    let precioNum = parseInt(numero, 10);
+    
+    if (!isNaN(precioNum)) {
+      // Calculamos precio "antes" mayor +10%
+      let precioAntes = Math.round(precioNum * 1.1);
+      const formatearPrecio = n => '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      
+      p.innerHTML = `
+        <span class="precio-original">${formatearPrecio(precioAntes)}</span>
+        <span class="precio-descuento">${textoPrecio}</span>
+      `;
+    }
+  });
+  const modalImage = document.querySelector('.modal-content img');
+  const fullscreenOverlay = document.createElement('div');
+  fullscreenOverlay.className = 'fullscreen-img-overlay';
+
+  const fullscreenImage = document.createElement('img');
+  fullscreenOverlay.appendChild(fullscreenImage);
+
+  const closeBtn = document.createElement('div');
+  closeBtn.className = 'fullscreen-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.display = 'none';  // <-- Añade esta línea
+  document.body.appendChild(fullscreenOverlay);
+  document.body.appendChild(closeBtn);
+
+  let scale = 1;
+  let originX = 0;
+  let originY = 0;
+  let isDragging = false;
+  let startX, startY;
+  let currentX = 0;
+  let currentY = 0;
+
+  modalImage.addEventListener('click', () => {
+    fullscreenImage.src = modalImage.src;
+    fullscreenOverlay.classList.add('active');
+    closeBtn.style.display = 'flex';
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  });
+
+  // Cerrar con el botón
+  closeBtn.addEventListener('click', () => {
+    fullscreenOverlay.classList.remove('active');
+    closeBtn.style.display = 'none';
+    resetTransform();
+  });
+
+  // Zoom con rueda mouse
+  fullscreenOverlay.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    scale += delta;
+    scale = Math.min(Math.max(1, scale), 5);
+    updateTransform();
+  });
+
+  // Arrastrar la imagen (mouse)
+  fullscreenOverlay.addEventListener('mousedown', e => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - currentX;
+    startY = e.clientY - currentY;
+    fullscreenOverlay.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    fullscreenOverlay.style.cursor = 'grab';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    updateTransform();
+  });
+
+  // Función para actualizar transformaciones CSS
+  function updateTransform() {
+    fullscreenImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+  }
+
+  // Reset transform al cerrar
+  function resetTransform() {
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  }
+  
+  </script>
+
+</body>
+</html>

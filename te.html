@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-arrow">←</a>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <img src="img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto">
+      <img src="img/te1.webp" alt="TE BLUEBERRY DREAMS" />
+      <p>TE BLUEBERRY DREAMS X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te2.webp" alt="TE MATCHA BERRIES" />
+      <p>TE MATCHA BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te3.webp" alt="TE ROOIBOS RED FRUITS" />
+      <p>TE ROOIBOS RED FRUITS X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te4.webp" alt="TE SPICY CHAI" />
+      <p>TE SPICY CHAI X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te5.webp" alt="TE CHOCOLATE BERRIES" />
+      <p>TE CHOCOLATE BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te6.webp" alt="TE CHOCOLATE TEMPTATION" />
+      <p>TE CHOCOLATE TEMPTATION X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te7.webp" alt="TE ROOIBOS CARAMEL" />
+      <p>TE ROOIBOS CARAMEL X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te8.webp" alt="TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA" />
+      <p>TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te9.webp" alt="TE JENGIBRE" />
+      <p>TE JENGIBRE X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te10.webp" alt="TE ARANDANO ROJO CON VAINILLA" />
+      <p>TE ARANDANO ROJO CON VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te11.webp" alt="TE NEGRO CON CHOCOLATE & MENTA" />
+      <p>TE NEGRO CON CHOCOLATE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te12.webp" alt="TE NEGRO CON CANELA" />
+      <p>TE NEGRO CON CANELA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te13.webp" alt="TE VAINILLA" />
+      <p>TE VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$2.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te14.webp" alt="TE FRUTILLA" />
+      <p>TE FRUTILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te15.webp" alt="TE LIMON" />
+      <p>TE LIMON X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te16.webp" alt="TE FRIO LIMONADA CON JENGIBRE & MENTA" />
+      <p>TE FRIO LIMONADA CON JENGIBRE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te17.webp" alt="TE FRIO ARANDANO" />
+      <p>TE FRIO ARANDANO X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te18.webp" alt="TE MIX 4 ELEMENTOS" />
+      <p>TE MIX 4 ELEMENTOS X 28 SAQUITOS</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te19.webp" alt="TE MIX BLENDS SELECTOS" />
+      <p>TE MIX BLENDS SELECTOS X 30 SAQUITOS</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto">
+      <img src="img/te20.webp" alt="TE BOX 108 SAQUITOS" />
+      <p>TE BOX 108 SAQUITOS</p>
+      <p class="precio">$47.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const productos = document.querySelectorAll(".producto");
+  const botonesAgregar = document.querySelectorAll(".agregar-btn");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalPrice = document.getElementById("modal-price");
+  const modalInfo = document.getElementById("modal-info");
+  const closeBtn = document.getElementById("closeModal");
+
+  const botonCarritoWsp = document.getElementById("boton-carrito-wsp");
+  const carritoSidebar = document.getElementById("carrito-sidebar");
+  const fondoOscuro = document.getElementById("fondo-oscuro");
+  const listaCarrito = document.getElementById("lista-carrito");
+  const totalEl = document.getElementById("total");
+  const enviarBtn = document.getElementById("enviar-pedido");
+
+  const productosData = [
+    {
+      nombre: "TE BLUEBERRY DREAMS X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Mezcla de Frutos Rojos, Hibisco, Manzana & Vainilla. Blend que equilibra la acidez frutal del hibisco y arándano con la dulzura aromática de la vainilla. Ideal para soñar despierto y disfrutar un momento especial.",
+      imagen: "img/te1.webp"
+    },
+    {
+      nombre: "TE MATCHA BERRIES X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Mezcla de té verde matcha con Frutos Rojos & Frambuesa. Una vibrante combinación de té verde matcha con el toque dulce y afrutado de las frambuesas. Ideal para disfrutar en momentos de calma y conexión.",
+      imagen: "img/te2.webp"
+    },
+    {
+      nombre: "TE ROOIBOS RED FRUITS X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Rooibos con Frutas, Menta, Pétalos de Rosas & Frutos Rojos. Un blend suave y aromático que combina rooibos africano con frutos rojos, menta y pétalos de rosas. Sus notas dulces y frescas ofrecen una experiencia cálida y relajante. Ideal para cualquier momento del día.",
+      imagen: "img/te3.webp"
+    },
+    {
+      nombre: "TE SPICY CHAI X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Té negro con Jengibre, Cardamomo & Clavo de Olor. Un blend intenso de té negro con jengibre, cardamomo y clavo de olor, inspirado en las tradiciones de la India. Sus notas especiadas aportan calidez y energía, ideal para los amantes de los sabores fuertes.",
+      imagen: "img/te4.webp"
+    },
+    {
+      nombre: "TE CHOCOLATE BERRIES X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Te rojo pu erh con especias, flores y frutos rojos. Combina la intensidad del cacao, el exótico sabor del Té Pu Erh chino y las notas dulces de los frutos rojos patagónicos.",
+      imagen: "img/te5.webp"
+    },
+    {
+      nombre: "TE CHOCOLATE TEMPTATION X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Té rojo con cacao y caléndula. Elaborado a partir de las notas intensas del té negro y la cáscara de cacao, en esta infusión se complementa con avellanas para crear un blend cremoso balance.",
+      imagen: "img/te6.webp"
+    },
+    {
+      nombre: "TE ROOIBOS CARAMEL X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Rooibos con canela, jazmin, caramelo y vainilla. Blend de Rooibos que combina la dulzura de la canela, caramelo y vainilla con las notas florales de los pimpollos de jazmín búlgaros. Ideal para disfrutar en cualquier momento del día.",
+      imagen: "img/te7.webp"
+    },
+    {
+      nombre: "TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Hibisco, frutos rojos, arándano, cáscara de naranja, rosa mosqueta y manzana. Infusión libre de teína que combina arándano y frutos rojos patagónicos con cáscara de naranja. Las flores de hibisco le aportan acidez al blend. Ideal para tomar en cualquier momento del día.",
+      imagen: "img/te8.webp"
+    },
+    {
+      nombre: "TE JENGIBRE X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Jengibre 100%. Infusión que ofrece un sabor auténtico, picante y revitalizante. Perfecta para quienes buscan una bebida natural que estimule los sentidos y aporte una sensación de calidez desde el primer sorbo.",
+      imagen: "img/te9.webp"
+    },
+    {
+      nombre: "TE ARANDANO ROJO CON VAINILLA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Hibisco, arándano rojo, vainilla, cáscara de naranja y rosa mosqueta. Combina la acidez del arándano rojo con la suavidad y dulzura de la vainilla. Esta combinación única crea una bebida aromática y reconfortante, perfecta para cualquier momento del día.",
+      imagen: "img/te10.webp"
+    },
+    {
+      nombre: "TE NEGRO CON CHOCOLATE & MENTA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Té negro, cacao, canela y menta. Base de té negro Ceylon proveniente de Sri Lanka que se combina con cascarilla de cacao, chocolate y hojas de menta. Dulce y fresco, ideal para acompañar postres.",
+      imagen: "img/te11.webp"
+    },
+    {
+      nombre: "TE NEGRO CON CANELA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Té negro con canela. Una combinación perfecta de intensidad y calidez. El sabor robusto del té negro se fusiona con el toque especiado de la canela, creando una bebida reconfortante ideal para cualquier momento del día.",
+      imagen: "img/te12.webp"
+    },
+    {
+      nombre: "TE VAINILLA X 20 SAQUITOS",
+      precio: "$2.500",
+      descripcion: "Té negro con vainilla. Es un blend que ofrece una experiencia de degustación equilibrada y armoniosa, ideal para aquellos que buscan un té clásico con un giro elegante y aromático.",
+      imagen: "img/te13.webp"
+    },
+    {
+      nombre: "TE FRUTILLA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Hibisco, frutilla, manzana deshidratada, cáscara de naranja. Infusión libre de teína que combina la dulzura de la frutilla con la acidez y frescura del hibisco. Ideal para tomar en cualquier momento del día.",
+      imagen: "img/te14.webp"
+    },
+    {
+      nombre: "TE LIMON X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Hibisco, cáscara de limón, rosa mosqueta, lemongrass. La acidez del hibisco, el frescor de la cáscara de limón, la suavidad de la rosa mosqueta y el toque herbal del lemongrass se combinan perfectamente para crear una experiencia refrescante y única.",
+      imagen: "img/te15.webp"
+    },
+    {
+      nombre: "TE FRIO LIMONADA CON JENGIBRE & MENTA X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Mezcla de manzanilla, limón, menta y jengibre. Para preparar directamente con agua fría, refrescante, ligeramente endulzado con stevia, ideal para cualquier momento del día.",
+      imagen: "img/te16.webp"
+    },
+    {
+      nombre: "TE FRIO ARANDANO X 20 SAQUITOS",
+      precio: "$4.600",
+      descripcion: "Mezcla de hibisco, frutos rojos, arándano, manzana y cáscara de naranja. Para preparar directamente con agua fría, refrescante, ligeramente endulzado con stevia, ideal para cualquier momento del día.",
+      imagen: "img/te17.webp"
+    },
+    {
+      nombre: "TE MIX 4 ELEMENTOS X 28 SAQUITOS",
+      precio: "$5.700",
+      descripcion: "Variedades Incluidas:\n\n" +
+        "Aire | Flowery White: Una delicada mezcla de Té Verde y Blanco con pétalos que ofrece un suave sabor a Rosa. Ideal para momentos de tranquilidad.\n\n" +
+        "Tierra | Green Mint: Disfruta de la frescura del Té verde Gunpowder combinado con Menta, Peperina, Cedrón y Caléndula. Un blend que revitaliza y refresca.\n\n" +
+        "Agua | Oolong Peach: La combinación de Té Azul Oolong con Durazno y Pétalos de Rosas te brinda una experiencia afrutada y floral, perfecta para cualquier ocasión.\n\n" +
+        "Fuego | Ginger Pu Erh: Una poderosa mezcla de Té Pu Erh con Cáscara de Naranja y Especias. Este blend calienta el cuerpo y despierta los sentidos.",
+      imagen: "img/te18.webp"
+    },
+    {
+      nombre: "TE MIX BLENDS SELECTOS X 30 SAQUITOS",
+      precio: "$5.700",
+      descripcion: "Cada caja contiene 5 saquitos de las siguientes mezclas:\n\n" +
+        "Choco & Roses: Una deliciosa mezcla de Té Negro con Cacao, Coco, Pétalos de Aciano y Rosas.\n\n" +
+        "Wildberries & Honey: Un refrescante hibisco combinado con Rosa Mosqueta, frutas y Pétalos de Aciano. Ideal para un momento de relax.\n\n" +
+        "Matcha Berries: Té Verde Matcha combinado con Frutos Rojos y Frambuesa, una opción antioxidante y llena de sabor.\n\n" +
+        "Chocolate Temptation: Té rojo con cacao, avellanas y caléndula para una experiencia cremosa y dulce.\n\n" +
+        "Spicy Chai: Té negro con jengibre, cardamomo y clavo de olor, perfecto para los amantes de sabores especiados.",
+      imagen: "img/te19.webp"
+    },
+    {
+      nombre: "TE BOX 108 SAQUITOS",
+      precio: "$47.000",
+      descripcion: "Incluye 9 variedades - 12 Saquitos de cada una.\n\n" +
+      "Variedades:\n\n" +
+      "Aire: Flowery White - Mezcla de Té Verde y Blanco con pétalos y sabor a Rosa.\n\n" +
+      "Tierra: Green Mint - Mezcla de Té verde Gunpowder con Menta, Peperina, Cedrón y Caléndula, sabor menta.\n\n" +
+      "Agua: Oolong Peach - Mezcla de Té Oolong con Durazno y Pétalos de Rosas.\n\n" +
+      "Fuego: Ginger Pu Erh - Mezcla de Té Pu Erh con Cáscara de Naranja y Especias.\n\n" +
+      "Té Blanco Pai Mutan | Origen: China\n\"Es un té suave, de poco cuerpo y color, con un sabor delicado y dulce, elaborado a partir de brotes y hojas de la camellia sinensis. Es un té que no está oxidado.\"\n\n" +
+      "Té Azul Oolong | Origen: China\n\"Conocido como “té azul” es un té parcialmente oxidado. Su grado de oxidación varía entre el nivel cero de los tés verde y la oxidación completa del té negro. Posee un característico aroma intenso, con un sabor suave y afrutado.\"\n\n" +
+      "Té Rojo Pu Erh | Origen: China\n\"Es un té fermentado procedente de la Provincia de Yunnan, China. Su perfil aromático y gustativo es totalmente diferente a los demás tés.\"\n\n" +
+      "Té Verde Sencha | Origen: China\n\"Excelente té verde chino, antioxidante, herbal y fresco, elaborado bajo el método de vaporizado de las hojas. Posee alta astringencia.\"\n\n" +
+      "English Breakfast | Ceylon, Assam y Darjeeling - Mix de Tés Negros\n\"Combina tres tipos de tés negros característicos. Es un blend con cuerpo, intenso, al que también se le puede agregar leche. Ideal para el primer té de la mañana.\"",
+      imagen: "img/te20.webp"
+    }
+  ];
+
+
+  function formatearNumero(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  productos.forEach((producto, i) => {
+    producto.addEventListener("click", (e) => {
+      if (e.target.classList.contains("agregar-btn")) return;
+      const data = productosData[i];
+      modalImg.src = data.imagen;
+      modalTitle.textContent = data.nombre;
+      modalPrice.textContent = data.precio;
+      modalInfo.textContent = data.descripcion;
+      modal.style.display = "flex";
+    });
+  });
+
+  botonesAgregar.forEach((btn, i) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const producto = productosData[i];
+      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+      // NUEVO: agregar producto con cantidad 1 o incrementar si ya existe
+      const index = carrito.findIndex(p => p.nombre === producto.nombre);
+      if (index !== -1) {
+        carrito[index].cantidad += 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      alert(`${producto.nombre} agregado al pedido`);
+      actualizarSidebar();
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // FUNCION ACTUALIZADA PARA MOSTRAR CANTIDAD, BOTONES DE +, -, ELIMINAR
+  function actualizarSidebar() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    listaCarrito.innerHTML = "";
+    let total = 0;
+
+    if (carrito.length === 0) {
+      listaCarrito.innerHTML = "<p>No hay productos en el pedido.</p>";
+      totalEl.textContent = "Total: $0";
+      return;
+    }
+
+    carrito.forEach((producto, i) => {
+      const div = document.createElement("div");
+      div.classList.add("carrito-producto");
+
+      // Extraemos precio numérico para cálculo
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+
+      div.innerHTML = `
+        <p><strong>${producto.nombre}</strong></p>
+        <p>Precio unitario: ${producto.precio}</p>
+        <p>
+          Cantidad: 
+          <button class="menos" data-index="${i}">-</button>
+          <span class="cantidad">${producto.cantidad}</span>
+          <button class="mas" data-index="${i}">+</button>
+        </p>
+        <p>Subtotal: $${formatearNumero(precioNum * producto.cantidad)}</p>
+        <button class="eliminar" data-index="${i}" style="background:#e74c3c; color:#fff; border:none; border-radius:4px; cursor:pointer; padding:2px 6px;">Eliminar</button>
+      `;
+      listaCarrito.appendChild(div);
+
+      total += precioNum * producto.cantidad;
+    });
+
+    totalEl.textContent = `Total: $${formatearNumero(total)}`;
+
+    // Eventos para botones +, -, eliminar
+    document.querySelectorAll(".mas").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito[idx].cantidad += 1;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+
+    document.querySelectorAll(".menos").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        if (carrito[idx].cantidad > 1) {
+          carrito[idx].cantidad -= 1;
+          localStorage.setItem("carrito", JSON.stringify(carrito));
+          actualizarSidebar();
+        }
+      };
+    });
+
+    document.querySelectorAll(".eliminar").forEach(btn => {
+      btn.onclick = () => {
+        const idx = btn.getAttribute("data-index");
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.splice(idx, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarSidebar();
+      };
+    });
+  }
+
+  botonCarritoWsp.addEventListener("click", () => {
+    carritoSidebar.classList.toggle("mostrar");
+    fondoOscuro.classList.toggle("mostrar");
+    actualizarSidebar();
+  });
+
+  fondoOscuro.addEventListener("click", () => {
+    carritoSidebar.classList.remove("mostrar");
+    fondoOscuro.classList.remove("mostrar");
+  });
+
+  enviarBtn.addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0) {
+      alert("No hay productos para enviar.");
+      return;
+    }
+
+    let mensaje = "Hola, quiero hacer el siguiente pedido:\n";
+    let total = 0;
+
+    carrito.forEach((producto, i) => {
+      const precioNum = Number(producto.precio.replace(/\./g, '').replace('$', '').replace(',', '.'));
+      total += precioNum * producto.cantidad;
+
+      mensaje += `${i + 1}. ${producto.nombre} x${producto.cantidad} - $${formatearNumero(precioNum * producto.cantidad)}\n`;
+    });
+
+    const totalFormateado = formatearNumero(total);
+    mensaje += `Total: $${totalFormateado}`;
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const telefono = "5491167186562";
+    const url = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
+
+    window.open(url, "_blank");
+
+    localStorage.removeItem("carrito");
+    actualizarSidebar();
+    carritoSidebar.classList.remove("mostrar");
+  });
+
+  actualizarSidebar();
+});
+document.querySelectorAll('.producto .precio').forEach(p => {
+    const textoPrecio = p.textContent.trim();
+    let numero = textoPrecio.replace(/[^\d]/g, '');
+    let precioNum = parseInt(numero, 10);
+    
+    if (!isNaN(precioNum)) {
+      // Calculamos precio "antes" mayor +10%
+      let precioAntes = Math.round(precioNum * 1.1);
+      const formatearPrecio = n => '$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      
+      p.innerHTML = `
+        <span class="precio-original">${formatearPrecio(precioAntes)}</span>
+        <span class="precio-descuento">${textoPrecio}</span>
+      `;
+    }
+  });
+  const modalImage = document.querySelector('.modal-content img');
+  const fullscreenOverlay = document.createElement('div');
+  fullscreenOverlay.className = 'fullscreen-img-overlay';
+
+  const fullscreenImage = document.createElement('img');
+  fullscreenOverlay.appendChild(fullscreenImage);
+
+  const closeBtn = document.createElement('div');
+  closeBtn.className = 'fullscreen-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.style.display = 'none';  // <-- Añade esta línea
+  document.body.appendChild(fullscreenOverlay);
+  document.body.appendChild(closeBtn);
+
+  let scale = 1;
+  let originX = 0;
+  let originY = 0;
+  let isDragging = false;
+  let startX, startY;
+  let currentX = 0;
+  let currentY = 0;
+
+  modalImage.addEventListener('click', () => {
+    fullscreenImage.src = modalImage.src;
+    fullscreenOverlay.classList.add('active');
+    closeBtn.style.display = 'flex';
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  });
+
+  // Cerrar con el botón
+  closeBtn.addEventListener('click', () => {
+    fullscreenOverlay.classList.remove('active');
+    closeBtn.style.display = 'none';
+    resetTransform();
+  });
+
+  // Zoom con rueda mouse
+  fullscreenOverlay.addEventListener('wheel', e => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    scale += delta;
+    scale = Math.min(Math.max(1, scale), 5);
+    updateTransform();
+  });
+
+  // Arrastrar la imagen (mouse)
+  fullscreenOverlay.addEventListener('mousedown', e => {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - currentX;
+    startY = e.clientY - currentY;
+    fullscreenOverlay.style.cursor = 'grabbing';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    fullscreenOverlay.style.cursor = 'grab';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    e.preventDefault();
+    currentX = e.clientX - startX;
+    currentY = e.clientY - startY;
+    updateTransform();
+  });
+
+  // Función para actualizar transformaciones CSS
+  function updateTransform() {
+    fullscreenImage.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+  }
+
+  // Reset transform al cerrar
+  function resetTransform() {
+    scale = 1;
+    currentX = 0;
+    currentY = 0;
+    updateTransform();
+  }
+  
+  </script>
+
+</body>
+</html>
