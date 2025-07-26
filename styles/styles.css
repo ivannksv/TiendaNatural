@@ -1012,21 +1012,20 @@ main, main.productos {
 =========================== */
 #modalResultados {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas iguales */
-  gap: 1.5rem;
-  max-width: 480px;   /* La mitad de 960px para ajustar mejor */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem; /* menos espacio entre tarjetas */
+  max-width: 480px;
   margin: 0 auto;
   padding-bottom: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   box-sizing: border-box;
 }
+
 
 
 /* TARJETA PRODUCTO */
 .resultado {
   background: rgba(255, 255, 255, 0.95);
-  padding: 1rem 1rem 1.3rem;
+  padding: 0.6rem 0.8rem 0.8rem;
   border-radius: 14px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
   text-align: center;
