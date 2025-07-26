@@ -435,8 +435,8 @@ h1 {
 main.productos {
   padding: 2rem 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
   background-color: #f9f9f9;
   overflow-y: auto;
 }
@@ -446,7 +446,7 @@ main.productos {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
-  padding: 1.25rem 1rem 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -461,7 +461,7 @@ main.productos {
 
 .producto img {
   width: 100%;
-  height: 180px;
+  height: 140px; /* opcional: más compacto */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.75rem;
