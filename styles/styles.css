@@ -510,6 +510,7 @@ main.productos {
   text-decoration: line-through;
   color: rgb(176, 0, 0);
   margin-right: 3px;
+  margin-left: -5px;
   font-size: 0.8rem;
   font-weight: 500;
 }
@@ -519,7 +520,12 @@ main.productos {
   color: #027a33;
   font-weight: 700;
   font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
+
 
 .producto .btn {
   background-color: #027a33;
