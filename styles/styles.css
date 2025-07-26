@@ -509,8 +509,6 @@ main.productos {
 .producto .precio-original {
   text-decoration: line-through;
   color: rgb(176, 0, 0);
-  margin-right: 3px;
-  margin-left: -5px;
   font-size: 0.8rem;
   font-weight: 500;
   overflow: hidden;
