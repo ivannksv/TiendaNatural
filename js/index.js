@@ -129,14 +129,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     modalSearchInput.addEventListener("input", () => {
-        const valor = modalSearchInput.value.toLowerCase().trim();
+        const valor = normalizarTexto(modalSearchInput.value.trim());
         modalResultados.innerHTML = '';
 
         if (valor === '') return;
 
         const filtrados = productosData.filter(p =>
-            p.nombre.toLowerCase().includes(valor)
+            normalizarTexto(p.nombre).includes(valor)
         );
+
 
         if (filtrados.length === 0) {
             modalResultados.innerHTML = `
