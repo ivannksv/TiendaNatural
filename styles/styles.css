@@ -23,6 +23,21 @@ header {
   position: sticky;
 }
 
+button {
+  background-color: initial;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  background-color: initial;
+  box-shadow: none;
+}
+
+
 @keyframes zoom {
   from {
     transform: scale(1);
@@ -431,7 +446,6 @@ h1 {
 }
 
 /* -------------------- SECCIÓN PRODUCTOS -------------------- */
-
 main.productos {
   padding: 2rem 1rem;
   display: grid;
@@ -439,7 +453,11 @@ main.productos {
   gap: 1rem;
   background-color: #f9f9f9;
   overflow-y: auto;
+
+  align-items: start;    /* evita que los productos se estiren verticalmente */
+  grid-auto-rows: auto;  /* filas con altura natural según contenido */
 }
+
 
 .producto {
   background: white;
@@ -470,7 +488,7 @@ main.productos {
 .producto p.nombre {
   margin: 0.25rem 0 0.75rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #222;
   white-space: nowrap;
   overflow: hidden;
@@ -478,7 +496,7 @@ main.productos {
 }
 
 .producto .precio {
-  font-size: 1rem;
+  font-size: 0.6rem;
   color: #027a33;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -488,7 +506,7 @@ main.productos {
   text-decoration: line-through;
   color: gray;
   margin-right: 8px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
@@ -503,7 +521,7 @@ main.productos {
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   padding: 0.4rem 0.8rem;
   font-weight: 600;
   cursor: pointer;
@@ -592,135 +610,163 @@ main, main.productos {
 .modal {
   position: fixed;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  background: #000000; /* Fondo sólido para que no se vea nada debajo */
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 99998;
-  backdrop-filter: blur(8px);
-  animation: fadeInBg 0.3s ease forwards;
   padding: 2rem;
   box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; /* Fondo sólido para bloquear todo */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99998;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+  animation: fadeInBg 0.3s ease forwards;
 }
 
 .modal-content {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
+  height: 100%;
   background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #044d22;
   position: relative;
   animation: fadeInUp 0.4s ease forwards;
+  overflow: hidden;
 }
 
-/* COLUMNA DE IMAGEN */
 .modal-content .imagen-fija {
   width: 50%;
-  background-color: #f3fef7;
+  background: #f0fdf4;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
   box-sizing: border-box;
-  border-right: 1px solid #d0e8d7;
+  border-right: 2px solid #cfe8d9;
 }
 
-.modal-content img {
-  width: 100%;
-  max-height: 400px;
+.modal-content .imagen-fija img {
+  width: 320px;
+  height: 320px;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(2, 122, 51, 0.2);
-  transition: transform 0.35s ease;
+  box-shadow: 0 8px 28px rgba(2, 122, 51, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.modal-content img:hover {
-  transform: scale(1.06);
+.modal-content .imagen-fija img:hover {
+  transform: scale(1.05);
 }
 
-/* COLUMNA DE TEXTO */
 .contenido-scroll {
   width: 50%;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
   overflow-y: auto;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #029933 #f2f9f3;
+}
+
+.contenido-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contenido-scroll::-webkit-scrollbar-track {
+  background: #f2f9f3;
+}
+
+.contenido-scroll::-webkit-scrollbar-thumb {
+  background-color: #029933;
+  border-radius: 8px;
 }
 
 .modal-content h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #016b2b;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  color: #025d27;
+  text-transform: capitalize;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 1.5rem;
 }
 
 .precio {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: #029933;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: flex;
-  align-items: center;
   gap: 10px;
+  align-items: center;
 }
 
 .precio-original {
   text-decoration: line-through;
-  color: #888;
+  color: #aaa;
   font-size: 1.1rem;
 }
 
 .precio-descuento {
   color: #d32f2f;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.3rem;
 }
 
 .precio-agotado {
   color: red;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
-.modal-content p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-/* BOTÓN DE CIERRE */
+/* BOTÓN CIERRE */
 .close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  background: #e9f5ec;
-  color: #027a33;
+  top: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  background: #029933;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  border: none;
   border-radius: 50%;
-  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 0 16px rgba(2, 122, 51, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 10000;
-  box-shadow: 0 0 10px rgba(2, 122, 51, 0.2);
 }
 
 .close-btn:hover {
-  background: #c8efd6;
-  color: #014d17;
-  box-shadow: 0 0 15px rgba(2, 122, 51, 0.4);
+  background: #04b240;
+  transform: scale(1.1);
+  box-shadow: 0 0 24px rgba(4, 178, 64, 0.6);
 }
 
 /* ANIMACIONES */
@@ -730,9 +776,10 @@ main, main.productos {
 }
 
 @keyframes fadeInBg {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
+
 
 /* RESPONSIVE PARA MÓVIL */
 @media (max-width: 768px) {
