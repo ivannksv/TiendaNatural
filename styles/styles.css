@@ -1236,6 +1236,7 @@ main, main.productos {
   border: none;
   padding: 14px;
   margin-top: 25px;
+  margin-bottom: 40px;
   cursor: pointer;
   border-radius: 8px;
   font-size: 1rem;
