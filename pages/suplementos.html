@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Dirección:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <label for="entre-cliente">Entre calles:</label>
+      <input type="text" id="entre-cliente" placeholder="Calle A y Calle B" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="cancelar-datos">Cancelar</button>
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="suplementos1">
+      <img src="../img/sup9.webp" alt="CITRATO DE MAGNESIO X 180 G" />
+      <p>CITRATO DE MAGNESIO X 180 G</p>
+      <p class="precio">$22.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos2">
+      <img src="../img/sup10.webp" alt="MELENA DE LEON X 40 G" />
+      <p>MELENA DE LEON X 40 G</p>
+      <p class="precio">$26.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos3">
+      <img src="../img/sup11.webp" alt="ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML" />
+      <p>ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML</p>
+      <p class="precio">$10.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos4">
+      <img src="../img/sup12.webp" alt="SPIRULINA EN POLVO X 100 G" />
+      <p>SPIRULINA EN POLVO X 100 G </p>
+      <p class="precio">$17.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos5">
+      <img src="../img/sup17.webp" alt="SPIRULINA EN POLVO X 100 G" />
+      <p>PROPOLEO BEBIBLE X 150 CC</p>
+      <p class="precio">$11.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/suplementos.js"></script>
+
+</body>
+</html>

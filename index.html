@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+    <button class="search-toggle" id="searchToggle" style="background:none; border:none; cursor:pointer; z-index: 2;">
+    <img src="img/lupa.png" alt="Buscar" style="height: 30px; width: 30px; filter: invert(1);">
+  </button>
+  </header>
+
+  <button id="sideTab" title="Ver menú">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="20" viewBox="0 0 24 24" width="20" style="margin-bottom: 6px;">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+    </svg>
+    VER PRODUCTOS
+  </button>
+
+  <div class="pedido-bar">Tus productos naturales.</div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- MENÚ HORIZONTAL PARA ESCRITORIO -->
+  <nav class="nav-pc">
+    <a href="pages/yerba.html">YERBA</a>
+    <a href="pages/te.html">TÉ</a>
+    <a href="pages/hebras.html">HEBRAS</a>
+    <a href="pages/cafe.html">CAFÉ</a>
+    <a href="pages/suplementos.html">SUPLEMENTOS</a>
+  </nav>
+
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="img/carrito.png" class="imgCar" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Dirección:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <label for="entre-cliente">Entre calles:</label>
+      <input type="text" id="entre-cliente" placeholder="Calle A y Calle B" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="cancelar-datos">Cancelar</button>
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="slider" id="slider">
+      <div class="slides">
+        <a href="pages/te.html"><img src="img/i1.jpg" alt="1" /></a>
+        <a href="pages/yerba.html"><img src="img/i2.jpg" alt="2" /></a>
+        <a href="pages/te.html"><img src="img/i3.jpg" alt="3" /></a>
+        <a href="pages/te.html"><img src="img/i4.jpg" alt="4" /></a>
+        <a href="pages/te.html"><img src="img/i5.jpg" alt="5" /></a>
+        <a href="pages/yerba.html"><img src="img/i6.jpg" alt="6" /></a>
+        <a href="pages/suplementos.html"><img src="img/i7.webp" alt="7" /></a>
+        <a href="pages/te.html"><img src="img/i8.webp" alt="8" /></a>
+        <a href="pages/hebras.html"><img src="img/i9.jpg" alt="9" /></a>
+        <a href="pages/yerba.html"><img src="img/i10.jpg" alt="10" /></a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MENU LATERAL -->
+  <nav class="side-menu" id="sideMenu">
+    <h2 class="side-title">Productos</h2>
+    <a href="pages/yerba.html" class="side-btn">YERBA</a>
+    <a href="pages/te.html" class="side-btn">TÉ</a>
+    <a href="pages/hebras.html" class="side-btn">HEBRAS</a>
+    <a href="pages/cafe.html" class="side-btn">CAFÉ</a>
+    <a href="pages/suplementos.html" class="side-btn">SUPLEMENTOS</a>
+    <a href="pages/colageno.html" class="side-btn">COLÁGENO</a>
+    <a href="pages/comprimidos.html" class="side-btn">COMPRIMIDOS</a>
+    <a href="pages/gotas.html" class="side-btn">TINTURAS</a>
+  </nav>
+
+  <!-- BUSCADOR MODAL (LUPA) -->
+  <div class="search-modal" id="searchModal">
+    <button id="closeSearch" aria-label="Cerrar buscador" style="position:absolute; z-index: 10000; top:10px; right:10px; font-size:1.5rem; background-color: rgba(0, 0, 0, 0.554); padding: 10px; border-radius: 10px; cursor:pointer; color:red;">✖</button>
+    <input type="text" id="modalSearchInput" placeholder="Buscar productos..." />
+    <div id="modalResultados"></div>
+  </div>
+
+    <!-- MODAL DE PRODUCTO -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeProductModal">&times;</span>
+      <img id="productModalImg" src="" alt="Producto" />
+      <h2 id="productModalTitle">Título</h2>
+      <p id="productModalPrice">Precio</p>
+      <p id="productModalDesc">Descripción</p>
+    </div>
+  </div>
+
+  <script src="js/productos/cafe.js"></script>
+  <script src="js/productos/hebras.js"></script>
+  <script src="js/productos/te.js"></script>
+  <script src="js/productos/yerba.js"></script>
+  <script src="js/productos/suplementos.js"></script>
+  <script src="js/productos/colageno.js"></script>
+  <script src="js/productos/comprimidos.js"></script>
+  <script src="js/productos/gotas.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

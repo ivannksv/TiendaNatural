@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Dirección:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <label for="entre-cliente">Entre calles:</label>
+      <input type="text" id="entre-cliente" placeholder="Calle A y Calle B" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="cancelar-datos">Cancelar</button>
+        <button id="confirmar-datos">Confirmar</button>
+      </div> 
+    </div>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="colageno1">
+      <img src="../img/sup1.webp" alt="COLAGENO HIDROLIZADO EN POLVO X 200 G" />
+      <p>COLAGENO HIDROLIZADO EN POLVO SIN SABOR X 200 G</p>
+      <p class="precio">$17.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno2">
+      <img src="../img/sup2.webp" alt="COLAGENO EN COMPRIMIDOS X 30 COMPRIMIDOS" />
+      <p>COLAGENO X 30 COMPRIMIDOS</p>
+      <p class="precio">$6.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno3">
+      <img src="../img/sup3.webp" alt="COLAGENO HIDROLIZADO MAGNESIO, GARCINIA & GUARANA X 200 G" />
+      <p>COLAGENO HIDROLIZADO, TE BLANCO, CALCIO, VIT C, MAGNESIO & GUARANA X 200 G</p>
+      <p class="precio">$17.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno4">
+      <img src="../img/sup4.webp" alt="COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS" />
+      <p>COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS</p>
+      <p class="precio">$8.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno5">
+      <img src="../img/sup5.webp" alt="COLAGENO HIDROLIZADO, ACIDO HIALURONICO, CURCUMA & MAGNESIO X 200 G" />
+      <p>COLAGENO HIDROLIZADO, ACIDO HIALURONICO, VIT C, CURCUMA & MAGNESIO X 200 G</p>
+      <p class="precio">$25.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno6">
+      <img src="../img/sup6.webp" alt="COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC X 200 G" />
+      <p>COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC X 200 G</p>
+      <p class="precio">$22.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno7">
+      <img src="../img/sup7.webp" alt="COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G" />
+      <p>COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G</p>
+      <p class="precio">$31.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="colageno8">
+      <img src="../img/sup8.webp" alt="COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G" />
+      <p>COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G</p>
+      <p class="precio">$25.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/colageno.js"></script>
+
+</body>
+</html>

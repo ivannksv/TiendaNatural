@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Dirección:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <label for="entre-cliente">Entre calles:</label>
+      <input type="text" id="entre-cliente" placeholder="Calle A y Calle B" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="cancelar-datos">Cancelar</button>
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="gotas1">
+      <img src="../img/gotas1.webp" alt="Gotas 1" />
+      <p>MELENA DE LEON X 60 CC</p>
+      <p class="precio">$26.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="gotas2">
+      <img src="../img/gotas2.webp" alt="Gotas 2" />
+      <p>CURCUMA, JENGIBRE, PIMIENTA NEGRA & VIT C X 60 CC</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="gotas3">
+      <img src="../img/gotas3.webp" alt="Gotas 3" />
+      <p>CENTELLA ASIATICA, GINKGO BILOBA, TE VERDE & HIBISCUS X 60 CC</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="gotas4">
+      <img src="../img/gotas4.webp" alt="Gotas 4" />
+      <p>MELENA DE LEON, GINSENG, ASTRAGALO, SCHIZANDRA, GINKGO BILOBA, L-ARGININA Y VIT E X 60 CC</p>
+      <p class="precio">$13.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="gotas5">
+      <img src="../img/gotas5.webp" alt="Gotas 5" />
+      <p>MELENA DE LEON, TILO, MELISA, VIT B6 y B1 X 60 CC</p>
+      <p class="precio">$13.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/gotas.js"></script>
+
+</body>
+</html>

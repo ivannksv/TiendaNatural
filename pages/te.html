@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    <div id="lista-carrito"></div>
+    <p id="total">Total: $0</p>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Dirección:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <label for="entre-cliente">Entre calles:</label>
+      <input type="text" id="entre-cliente" placeholder="Calle A y Calle B" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="cancelar-datos">Cancelar</button>
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div> 
+  </div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="te1">
+      <img src="../img/te1.webp" alt="TE BLUEBERRY DREAMS" />
+      <p>TE BLUEBERRY DREAMS X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te2">
+      <img src="../img/te2.webp" alt="TE MATCHA BERRIES" />
+      <p>TE MATCHA BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te3">
+      <img src="../img/te3.webp" alt="TE ROOIBOS RED FRUITS" />
+      <p>TE ROOIBOS RED FRUITS X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te4">
+      <img src="../img/te4.webp" alt="TE SPICY CHAI" />
+      <p>TE SPICY CHAI X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te5">
+      <img src="../img/te5.webp" alt="TE CHOCOLATE BERRIES" />
+      <p>TE CHOCOLATE BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te6">
+      <img src="../img/te6.webp" alt="TE CHOCOLATE TEMPTATION" />
+      <p>TE CHOCOLATE TEMPTATION X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te7">
+      <img src="../img/te7.webp" alt="TE ROOIBOS CARAMEL" />
+      <p>TE ROOIBOS CARAMEL X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te20">
+      <img src="../img/te20.webp" alt="TE BOX 108 SAQUITOS" />
+      <p>INDIAN CHAI X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te8">
+      <img src="../img/te8.webp" alt="TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA" />
+      <p>TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te9">
+      <img src="../img/te9.webp" alt="TE JENGIBRE" />
+      <p>TE JENGIBRE X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te10">
+      <img src="../img/te10.webp" alt="TE ARANDANO ROJO CON VAINILLA" />
+      <p>TE ARANDANO ROJO CON VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te11">
+      <img src="../img/te11.webp" alt="TE NEGRO CON CHOCOLATE & MENTA" />
+      <p>TE NEGRO CON CHOCOLATE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te12">
+      <img src="../img/te12.webp" alt="TE NEGRO CON CANELA" />
+      <p>TE NEGRO CON CANELA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te13">
+      <img src="../img/te13.webp" alt="TE VAINILLA" />
+      <p>TE VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$2.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te14">
+      <img src="../img/te14.webp" alt="TE FRUTILLA" />
+      <p>TE FRUTILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te15">
+      <img src="../img/te15.webp" alt="TE LIMON" />
+      <p>TE LIMON X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te16">
+      <img src="../img/te16.webp" alt="TE FRIO LIMONADA CON JENGIBRE & MENTA" />
+      <p>TE FRIO LIMONADA CON JENGIBRE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te17">
+      <img src="../img/te17.webp" alt="TE FRIO ARANDANO" />
+      <p>TE FRIO ARANDANO X 20 SAQUITOS</p>
+      <p class="precio">$4.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te18">
+      <img src="../img/te18.webp" alt="TE MIX 4 ELEMENTOS" />
+      <p>TE MIX 4 ELEMENTOS X 28 SAQUITOS</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te19">
+      <img src="../img/te19.webp" alt="TE MIX BLENDS SELECTOS" />
+      <p>TE MIX BLENDS SELECTOS X 30 SAQUITOS</p>
+      <p class="precio">$5.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/te.js"></script>
+
+</body>
+</html>
