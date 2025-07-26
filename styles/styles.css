@@ -486,20 +486,23 @@ main.productos {
   margin-bottom: 0.75rem;
 }
 
-.producto p.nombre {
+.producto p:not(.precio) {
   margin: 0.25rem 0 0.75rem;
   font-weight: 600;
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: #222;
 
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Máximo 2 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  white-space: normal; /* Importante: permite salto de línea */
-  max-width: 100%;
+  display: -webkit-box;           /* necesario para limitar líneas */
+  -webkit-line-clamp: 2;          /* máximo 2 líneas */
+  -webkit-box-orient: vertical;   /* orientación vertical */
+  
+  overflow: hidden;               /* oculta lo que se desborda */
+  text-overflow: ellipsis;        /* puntos suspensivos */
+  
+  max-height: 2.8rem;             /* 1.4rem line-height x 2 líneas */
+  line-height: 1.4rem;
+  white-space: normal;            /* permite salto de línea */
+  word-break: break-word;         /* evitar que palabras muy largas desborden */
 }
 
 
@@ -661,6 +664,7 @@ main, main.productos {
 }
 
 .modal-content .imagen-fija {
+  height: 280px;
   width: 50%;
   background: #f0fdf4;
   display: flex;
@@ -672,8 +676,8 @@ main, main.productos {
 }
 
 .modal-content .imagen-fija img {
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 8px 28px rgba(2, 122, 51, 0.2);
