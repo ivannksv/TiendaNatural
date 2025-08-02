@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    
+    <!-- Contenedor con scroll para la lista -->
+    <div id="carrito-productos-container">
+      <div id="lista-carrito"></div>
+    </div>
+
+    <!-- Footer fijo con total y botón -->
+    <div id="carrito-footer">
+      <p id="total">Total: $0</p>
+      <button id="enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+ 
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Altura:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fondo oscuro para datos cliente -->
+  <div id="fondo-oscuro-datos"></div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="suplementos1" data-marca="COLAGENO">
+      <img src="../img/sup1.webp" alt="COLAGENO HIDROLIZADO EN POLVO X 200 G" />
+      <p>COLAGENO HIDROLIZADO EN POLVO SIN SABOR X 200 G</p> 
+      <p class="precio">$18.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos2" data-marca="COLAGENO">
+      <img src="../img/sup2.webp" alt="COLAGENO EN COMPRIMIDOS X 30 COMPRIMIDOS" />
+      <p>COLAGENO X 30 COMPRIMIDOS</p>
+      <p class="precio">$6.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos3" data-marca="COLAGENO">
+      <img src="../img/sup3.webp" alt="COLAGENO HIDROLIZADO MAGNESIO, GARCINIA & GUARANA X 200 G" />
+      <p>COLAGENO HIDROLIZADO, TE BLANCO, CALCIO, VIT C, MAGNESIO & GUARANA X 200 G</p>
+      <p class="precio">$18.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos4" data-marca="COLAGENO">
+      <img src="../img/sup4.webp" alt="COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS" />
+      <p>COLAGENO + CARTILAGO DE TIBURON X 30 COMPRIMIDOS</p>
+      <p class="precio">$8.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos5" data-marca="COLAGENO">
+      <img src="../img/sup5.webp" alt="COLAGENO HIDROLIZADO, ACIDO HIALURONICO, CURCUMA & MAGNESIO X 200 G" />
+      <p>COLAGENO HIDROLIZADO, ACIDO HIALURONICO, VIT C, CURCUMA & MAGNESIO X 200 G</p>
+      <p class="precio">$26.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos6" data-marca="COLAGENO">
+      <img src="../img/sup6.webp" alt="COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC X 200 G" />
+      <p>COLAGENO HIDROLIZADO, VITAMINA C, CALCIO, MAGNESIO & ZINC X 200 G</p>
+      <p class="precio">$23.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos7" data-marca="COLAGENO">
+      <img src="../img/sup7.webp" alt="COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G" />
+      <p>COLAGENO HIDROLIZADO CON MATCHA, COENZIMA Q10 & REVERATROL X 200 G</p>
+      <p class="precio">$31.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos8" data-marca="COLAGENO">
+      <img src="../img/sup8.webp" alt="COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G" />
+      <p>COLAGENO HIDROLIZADO, VIT C, CURCUMA Y MAGNESIO SIN SABOR X 200 G</p>
+      <p class="precio">$27.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos9" data-marca="POLVOS">
+      <img src="../img/sup9.webp" alt="CITRATO DE MAGNESIO X 180 G" />
+      <p>CITRATO DE MAGNESIO X 180 G</p>
+      <p class="precio">$23.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos10" data-marca="POLVOS">
+      <img src="../img/sup10.webp" alt="MELENA DE LEON X 40 G" />
+      <p>MELENA DE LEON X 40 G</p>
+      <p class="precio">$27.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos11" data-marca="OTROS">
+      <img src="../img/sup11.webp" alt="ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML" />
+      <p>ACEITE DE COCO PRENSADO EN FRIO VIDRIO X 180 ML</p>
+      <p class="precio">$10.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos12" data-marca="POLVOS">
+      <img src="../img/sup12.webp" alt="SPIRULINA EN POLVO X 100 G" />
+      <p>SPIRULINA EN POLVO X 100 G </p>
+      <p class="precio">$18.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos13" data-marca="OTROS">
+      <img src="../img/sup17.webp" alt="PROPOLEO" />
+      <p>PROPOLEO BEBIBLE X 150 CC</p>
+      <p class="precio">$11.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos14" data-marca="POLVOS">
+      <img src="../img/sup18.webp" alt="MATCHA & MELENA DE LEON X 40 G" />
+      <p>MATCHA & MELENA DE LEON X 40 G</p>
+      <p class="precio">$27.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos15" data-marca="COMPRIMIDOS">
+      <img src="../img/sup13.webp" alt="MANZANILLA, TILO, MELISA, SCHIZANDRA + VIT B1 y B6 X 30 COMPRIMIDOS" />
+      <p>MANZANILLA, TILO, MELISA, SCHIZANDRA + VIT B1 y B6 X 30</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos16" data-marca="COMPRIMIDOS">
+      <img src="../img/sup14.webp" alt="VITAMINA C X 30 COMPRIMIDOS" />
+      <p>VITAMINA C X 30</p>
+      <p class="precio">$9.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos17" data-marca="COMPRIMIDOS">
+      <img src="../img/sup16.webp" alt="Yerba 6" />
+      <p>VENPLUS - MAGNESIO, VIT C, CASCARA DE NARANJA, GINKGO BILOBA, CENTELLA y CURCUMA</p>
+      <p class="precio">$7.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos18" data-marca="COMPRIMIDOS">
+      <img src="../img/com1.webp" alt="Yerba 6" />
+      <p>ALFALFA X 40</p>
+      <p class="precio">$5.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos19" data-marca="COMPRIMIDOS">
+      <img src="../img/com2.webp" alt="Yerba 6" />
+      <p>VIVIR - VIT E, ZINC, COBRE + VIT A, C y SELENIO</p>
+      <p class="precio">$6.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos20" data-marca="COMPRIMIDOS">
+      <img src="../img/com3.webp" alt="Yerba 6" />
+      <p>LUPINES X 40</p>
+      <p class="precio">$5.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos21" data-marca="COMPRIMIDOS">
+      <img src="../img/com4.webp" alt="Yerba 6" />
+      <p>BELLA SKIN - BIOTINA, VIT B6, ACIDO PANTOTENICO, ZINC, L-METIONINA y L-CISTINA</p>
+      <p class="precio">$9.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos22" data-marca="COMPRIMIDOS">
+      <img src="../img/com5.webp" alt="Yerba 6" />
+      <p>POLEN CON ZINC + VIT C</p>
+      <p class="precio">$5.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos23" data-marca="COMPRIMIDOS">
+      <img src="../img/com6.webp" alt="Yerba 6" />
+      <p>POTENCIADOR NATURAL GINSENG X 30</p>
+      <p class="precio">$18.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos24" data-marca="OTROS">
+      <img src="../img/sup19.webp" alt="ACEITE DE COCO" />
+      <p>ACEITE DE COCO NEUTRO VIDRIO X 180 ML</p>
+      <p class="precio">$10.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos25" data-marca="POLVOS">
+      <img src="../img/sup20.webp" alt="" />
+      <p>PSYLLIUM EN POLVO DOYPACK X 200 G</p>
+      <p class="precio">$23.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos26" data-marca="COMPRIMIDOS">
+      <img src="../img/com7.webp" alt="Yerba 6" />
+      <p>POLEN, ORTIGA + VIT C</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos27" data-marca="COMPRIMIDOS">
+      <img src="../img/com8.webp" alt="Yerba 6" />
+      <p>CARTILAGO DE TIBURON EN COMPRIMIDOS</p>
+      <p class="precio">$9.500</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos28" data-marca="COMPRIMIDOS">
+      <img src="../img/com9.webp" alt="Yerba 6" />
+      <p>CAFE VERDE EN COMPRIMIDOS</p>
+      <p class="precio">$6.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos29" data-marca="COMPRIMIDOS">
+      <img src="../img/com10.webp" alt="Yerba 6" />
+      <p>SPIRULINA EN COMPRIMIDOS</p>
+      <p class="precio">$11.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos30" data-marca="COMPRIMIDOS">
+      <img src="../img/com11.webp" alt="Yerba 6" />
+      <p>MAGNESIO EN COMPRIMIDOS</p>
+      <p class="precio">$6.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos31" data-marca="COMPRIMIDOS">
+      <img src="../img/com12.webp" alt="" />
+      <p>CHIA EN COMPRIMIDOS</p>
+      <p class="precio">$7.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos32" data-marca="COMPRIMIDOS">
+      <img src="../img/com13.webp" alt="" />
+      <p>GINKGO BILOBA + MAGNESIO</p>
+      <p class="precio">$7.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos33" data-marca="COMPRIMIDOS">
+      <img src="../img/com14.webp" alt="" />
+      <p>CENTELLA ASIATICA, FUCUS, GINKGO BILOBA + VIT E X 30 COMPRIMIDOS</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos34" data-marca="COMPRIMIDOS">
+      <img src="../img/com15.webp" alt="" />
+      <p>CENTELLA ASIATICA + MAGNESIO</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos35" data-marca="COMPRIMIDOS">
+      <img src="../img/com16.webp" alt="" />
+      <p>GINSENG + MAGNESIO</p>
+      <p class="precio">$9.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos36" data-marca="COMPRIMIDOS">
+      <img src="../img/com17.webp" alt="" />
+      <p>ENERGIZANTE - MAGNESIO, GUARANÁ, GERMEN DE TRIGO, L- CARNITINA, GINSENG COREANO Y VIT E</p>
+      <p class="precio">$9.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos37" data-marca="COMPRIMIDOS">
+      <img src="../img/sup21.webp" alt="" />
+      <p>ARANDANO, VIT C y E</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos38" data-marca="OTROS">
+      <img src="../img/sup22.webp" alt="" />
+      <p>ACEITE DE PESCADO X 70 CC</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos39" data-marca="OTROS">
+      <img src="../img/sup23.webp" alt="" />
+      <p>ACEITE DE PRIMULA X 70 CC</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos40" data-marca="OTROS">
+      <img src="../img/sup24.webp" alt="" />
+      <p>ACEITE DE GERMEN DE TRIGO y VIT E X 70 CC</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos41" data-marca="COMPRIMIDOS">
+      <img src="../img/com18.webp" alt="" />
+      <p>ADELGAZANTE DELMAX CAFE VERDE + CAYENA, TE VERDE, TILO, PASIONARIA, L-CARNITINA y VIT B6</p>
+      <p class="precio">$19.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos42" data-marca="COMPRIMIDOS">
+      <img src="../img/com19.webp" alt="" />
+      <p>ADELGAZANTE DELMAX SPIRULINA MAX PLUS</p>
+      <p class="precio">$17.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos43" data-marca="COMPRIMIDOSN">
+      <img src="../img/com20.webp" alt="" />
+      <p>MELENA DE LEON VITAWELLNESS CAPSULAS</p>
+      <p class="precio">$19.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos44" data-marca="COMPRIMIDOSN">
+      <img src="../img/com21.webp" alt="" />
+      <p>CURCUMA, JENGIBRE, PIMIENTA NEGRA & VIT C COMPRIMIDOS</p>
+      <p class="precio">$8.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos45" data-marca="COMPRIMIDOSN">
+      <img src="../img/com22.webp" alt="" />
+      <p>CITRATO DE MAGNESIO EN COMPRIMIDOS</p>
+      <p class="precio">$8.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos46" data-marca="COMPRIMIDOSN">
+      <img src="../img/com23.webp" alt="" />
+      <p>V-MAX FORTE MELENA DE LEON, GINSENG, ASTRAGALO, SCHIZANDRA, GINKGO BILOBA, L-ARGININA Y VIT E COMPRIMIDOS</p>
+      <p class="precio">$13.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos47" data-marca="COMPRIMIDOSN">
+      <img src="../img/com24.webp" alt="" />
+      <p>LION'S MANE SERENA MELENA DE LEON, TILO, MELISA, VIT B6 y B1 EN COMPRIMIDOS</p>
+      <p class="precio">$13.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="suplementos48" data-marca="COMPRIMIDOSN">
+      <img src="../img/com25.webp" alt="" />
+      <p>CENTELLA ASIATICA, GINKGO BILOBA, TE VERDE & HIBISCUS COMPRIMIDOS</p>
+      <p class="precio">$8.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/filtro-marca.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/suplementos.js"></script>
+
+</body>
+</html>

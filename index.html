@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <img src="img/logo.jpg" alt="Logo" class="logo" />
+    <button class="search-toggle" id="searchToggle" style="background:none; border:none; cursor:pointer; z-index: 2;">
+    <img src="img/lupa.png" alt="Buscar" style="height: 30px; width: 30px; filter: invert(1);">
+  </button>
+  </header>
+
+  <button id="sideTab" title="Ver menú">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="20" viewBox="0 0 24 24" width="20" style="margin-bottom: 6px;">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+    </svg>
+    VER PRODUCTOS
+  </button>
+
+  <div class="pedido-bar">Tus productos naturales.</div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- MENÚ HORIZONTAL PARA ESCRITORIO -->
+  <nav class="nav-pc">
+    <div class="menu-item">
+      <a href="pages/yerba.html">YERBA</a>
+      <div class="submenu">
+        <a href="pages/yerba.html?marca=SILVESTRES">Silvestres</a>
+        <a href="pages/yerba.html?marca=PATAGONIA">Patagonia</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <a href="pages/te.html">TÉ</a>
+      <div class="submenu">
+        <a href="pages/te.html?marca=DELHITEA">Delhi Tea</a>
+        <a href="pages/te.html?marca=PATAGONIA">Patagonia</a>
+        <a href="pages/te.html?marca=MIX">Mix</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <a href="pages/hebras.html">HEBRAS</a>
+      <div class="submenu">
+        <a href="pages/hebras.html?marca=DELHITEA">Delhi Tea</a>
+        <a href="pages/hebras.html?marca=PATAGONIA">Patagonia</a>
+        <a href="pages/hebras.html?marca=SILVESTRES">Silvestres</a>
+        <a href="pages/hebras.html?marca=VITA">Vitawellness</a>
+        <a href="pages/hebras.html?marca=MATCHA">Matcha</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <a href="pages/cafe.html">CAFÉ Y ACCESORIOS</a>
+    </div>
+
+    <div class="menu-item">
+      <a href="pages/suplementos.html">SUPLEMENTOS</a>
+      <div class="submenu">
+        <a href="pages/suplementos.html?marca=POLVOS">Polvos</a>
+        <a href="pages/suplementos.html?marca=COLAGENO">Colágeno</a>
+        <a href="pages/suplementos.html?marca=COMPRIMIDOS">Comprimidos</a>
+        <a href="pages/suplementos.html?marca=COMPRIMIDOSN">Comprimidos Nutritivos</a>
+        <a href="pages/suplementos.html?marca=OTROS">Aceites y Otros</a>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <a href="pages/gotas.html">GOTAS</a>
+    </div>
+  </nav>
+
+
+
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="img/carrito.png" class="imgCar" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    
+    <!-- Contenedor con scroll para la lista -->
+    <div id="carrito-productos-container">
+      <div id="lista-carrito"></div>
+    </div>
+
+    <!-- Footer fijo con total y botón -->
+    <div id="carrito-footer">
+      <p id="total">Total: $0</p>
+      <button id="enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Altura:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fondo oscuro para datos cliente -->
+  <div id="fondo-oscuro-datos"></div>
+
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <!-- MAIN -->
+  <main>
+
+    <div class="slider" id="slider">
+      <div class="slides">
+        <a href="pages/te.html?marca=DELHITEA"><img src="img/i1.jpg" alt="1" /></a>
+        <a href="pages/te.html?marca=PATAGONIA"><img src="img/i2.jpg" alt="2" /></a>
+        <a href="pages/yerba.html?marca=PATAGONIA"><img src="img/i3.jpg" alt="3" /></a>
+        <a href="pages/suplementos.html?marca=COLAGENO"><img src="img/i4.jpg" alt="4" /></a>
+        <a href="pages/hebras.html?marca=PATAGONIA"><img src="img/i5.jpg" alt="5" /></a>
+        <a href="pages/hebras.html?marca=DELHITEA"><img src="img/i6.jpg" alt="6" /></a>
+        <a href="pages/suplementos.html?marca=COLAGENO"><img src="img/i7.webp" alt="7" /></a>
+        <a href="pages/te.html?marca=DELHITEA"><img src="img/i8.webp" alt="8" /></a>
+        <a href="pages/te.html?marca=DELHITEA"><img src="img/i9.jpg" alt="9" /></a>
+        <a href="pages/te.html?marca=DELHITEA"><img src="img/i10.jpg" alt="10" /></a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MENU LATERAL -->
+  <nav class="side-menu" id="sideMenu">
+    <h2 class="side-title">Productos</h2>
+
+    <div class="side-btn-dropdown">
+      <div class="side-btn dropdown-toggle">YERBA</div>
+        <div class="dropdown-options">
+          <a href="pages/yerba.html?marca=SILVESTRES" class="side-sub-btn">Silvestres</a>
+          <a href="pages/yerba.html?marca=PATAGONIA" class="side-sub-btn">Patagonia</a>
+        </div>
+    </div>
+
+    <div class="side-btn-dropdown">
+      <div class="side-btn dropdown-toggle">TÉ</div>
+        <div class="dropdown-options">
+          <a href="pages/te.html?marca=DELHITEA" class="side-sub-btn">Delhi Tea</a>
+          <a href="pages/te.html?marca=PATAGONIA" class="side-sub-btn">Patagonia</a>
+          <a href="pages/te.html?marca=MIX" class="side-sub-btn">Mix</a>
+        </div>
+    </div>
+
+    <div class="side-btn-dropdown">
+      <div class="side-btn dropdown-toggle">HEBRAS</div>
+        <div class="dropdown-options">
+          <a href="pages/hebras.html?marca=DELHITEA" class="side-sub-btn">Delhi Tea</a>
+          <a href="pages/hebras.html?marca=PATAGONIA" class="side-sub-btn">Patagonia</a>
+          <a href="pages/hebras.html?marca=SILVESTRES" class="side-sub-btn">Silvestres</a>
+          <a href="pages/hebras.html?marca=VITA" class="side-sub-btn">Vitawellness</a>
+          <a href="pages/hebras.html?marca=MATCHA" class="side-sub-btn">Matcha</a>
+        </div>
+    </div>
+
+    <a href="pages/cafe.html" class="side-btn">CAFÉ Y ACCESORIOS</a>
+
+    <div class="side-btn-dropdown">
+      <div class="side-btn dropdown-toggle">SUPLEMENTOS</div>
+        <div class="dropdown-options">
+          <a href="pages/suplementos.html?marca=POLVOS" class="side-sub-btn">Polvos</a>
+          <a href="pages/suplementos.html?marca=COLAGENO" class="side-sub-btn">Colageno</a>
+          <a href="pages/suplementos.html?marca=COMPRIMIDOS" class="side-sub-btn">Comprimidos</a>
+          <a href="pages/suplementos.html?marca=COMPRIMIDOSN" class="side-sub-btn">Comprimidos Nutritivos</a>
+          <a href="pages/suplementos.html?marca=OTROS" class="side-sub-btn">Aceites y Otros</a>
+        </div>
+    </div>
+
+    <a href="pages/gotas.html" class="side-btn">TINTURAS</a>
+  </nav>
+
+  <!-- BUSCADOR MODAL (LUPA) -->
+  <div class="search-modal" id="searchModal">
+    <button id="closeSearch" aria-label="Cerrar buscador" style="position:absolute; z-index: 10000; top:10px; right:10px; font-size:1.5rem; background-color: rgba(0, 0, 0, 0.554); padding: 10px; border-radius: 10px; cursor:pointer; color:red;">✖</button>
+    <input type="text" id="modalSearchInput" placeholder="Buscar productos..." />
+    <div id="modalResultados"></div>
+  </div>
+
+    <!-- MODAL DE PRODUCTO -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeProductModal">&times;</span>
+      <img id="productModalImg" src="" alt="Producto" />
+      <h2 id="productModalTitle">Título</h2>
+      <p id="productModalPrice">Precio</p>
+      <p id="productModalDesc">Descripción</p>
+    </div>
+  </div>
+
+  <script src="js/productos/cafe.js"></script>
+  <script src="js/productos/hebras.js"></script>
+  <script src="js/productos/te.js"></script>
+  <script src="js/productos/yerba.js"></script>
+  <script src="js/productos/suplementos.js"></script>
+  <script src="js/productos/gotas.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

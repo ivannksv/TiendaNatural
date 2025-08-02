@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    
+    <!-- Contenedor con scroll para la lista -->
+    <div id="carrito-productos-container">
+      <div id="lista-carrito"></div>
+    </div>
+
+    <!-- Footer fijo con total y botón -->
+    <div id="carrito-footer">
+      <p id="total">Total: $0</p>
+      <button id="enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Altura:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fondo oscuro para datos cliente -->
+  <div id="fondo-oscuro-datos"></div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="te1" data-marca="DELHITEA">
+      <img src="../imgt/te1.webp" alt="TE BLUEBERRY DREAMS" />
+      <p>TE BLUEBERRY DREAMS X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te2" data-marca="DELHITEA">
+      <img src="../imgt/te2.webp" alt="TE MATCHA BERRIES" />
+      <p>TE MATCHA BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te3" data-marca="DELHITEA">
+      <img src="../imgt/te3.webp" alt="TE ROOIBOS RED FRUITS" />
+      <p>TE ROOIBOS RED FRUITS X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te4" data-marca="DELHITEA">
+      <img src="../imgt/te4.webp" alt="TE SPICY CHAI" />
+      <p>TE SPICY CHAI X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te5" data-marca="DELHITEA">
+      <img src="../imgt/te5.webp" alt="TE CHOCOLATE BERRIES" />
+      <p>TE CHOCOLATE BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te6" data-marca="DELHITEA">
+      <img src="../imgt/te6.webp" alt="TE CHOCOLATE TEMPTATION" />
+      <p>TE CHOCOLATE TEMPTATION X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te7" data-marca="DELHITEA">
+      <img src="../imgt/te7.webp" alt="TE ROOIBOS CARAMEL" />
+      <p>TE ROOIBOS CARAMEL X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te20" data-marca="DELHITEA">
+      <img src="../imgt/te20.webp" alt="TE BOX 108 SAQUITOS" />
+      <p>INDIAN CHAI X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te8" data-marca="PATAGONIA">
+      <img src="../imgt/te8.webp" alt="TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA" />
+      <p>TE ARANDANO AZUL CON FRUTOS ROJOS & NARANJA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te9" data-marca="PATAGONIA">
+      <img src="../imgt/te9.webp" alt="TE JENGIBRE" />
+      <p>TE JENGIBRE X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te10" data-marca="PATAGONIA">
+      <img src="../imgt/te10.webp" alt="TE ARANDANO ROJO CON VAINILLA" />
+      <p>TE ARANDANO ROJO CON VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te11" data-marca="PATAGONIA">
+      <img src="../imgt/te11.webp" alt="TE NEGRO CON CHOCOLATE & MENTA" />
+      <p>TE NEGRO CON CHOCOLATE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te12" data-marca="PATAGONIA">
+      <img src="../imgt/te12.webp" alt="TE NEGRO CON CANELA" />
+      <p>TE NEGRO CON CANELA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te13" data-marca="PATAGONIA">
+      <img src="../imgt/te13.webp" alt="TE VAINILLA" />
+      <p>TE VAINILLA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te14" data-marca="PATAGONIA">
+      <img src="../imgt/te14.webp" alt="TE FRUTILLA" />
+      <p>TE FRUTILLA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te15" data-marca="PATAGONIA">
+      <img src="../imgt/te15.webp" alt="TE LIMON" />
+      <p>TE LIMON X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te16" data-marca="PATAGONIA">
+      <img src="../imgt/te16.webp" alt="TE FRIO LIMONADA CON JENGIBRE & MENTA" />
+      <p>TE FRIO LIMONADA CON JENGIBRE & MENTA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te17" data-marca="PATAGONIA">
+      <img src="../imgt/te17.webp" alt="TE FRIO ARANDANO" />
+      <p>TE FRIO ARANDANO X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te18" data-marca="MIX">
+      <img src="../imgt/te18.webp" alt="TE MIX 4 ELEMENTOS" />
+      <p>TE MIX 4 ELEMENTOS X 28 SAQUITOS</p>
+      <p class="precio">$6.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te19" data-marca="MIX">
+      <img src="../imgt/te19.webp" alt="TE MIX BLENDS SELECTOS" />
+      <p>TE MIX BLENDS SELECTOS X 30 SAQUITOS</p>
+      <p class="precio">$6.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te21" data-marca="MIX">
+      <img src="../imgt/te21.webp" alt="TE MIX SELECCION BLENS" />
+      <p>TE MIX SELECCION DE BLENDS X 30 SAQUITOS</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te22" data-marca="MIX">
+      <img src="../imgt/te22.webp" alt="TE MIX CLASICOS FRUTALES" />
+      <p>TE MIX CLASICOS & FRUTALES X 30 SAQUITOS</p>
+      <p class="precio">$6.000</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te23" data-marca="PATAGONIA">
+      <img src="../imgt/te23.webp" alt="TE FRIO MARACUYA" />
+      <p>TE FRIO MARACUYA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te24" data-marca="DELHITEA">
+      <img src="../imgt/te24.webp" alt="AGUA" />
+      <p>AGUA - OOLONG PEACH X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te25" data-marca="DELHITEA">
+      <img src="../imgt/te25.webp" alt="AIRE - FLOWERY WHITE X 20 SAQUITOS" />
+      <p>AIRE - FLOWERY WHITE X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te26" data-marca="DELHITEA">
+      <img src="../imgt/te26.webp" alt="FUEGO - GINGER PU ERH X 20 SAQUITOS" />
+      <p>FUEGO - GINGER PU ERH X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te27" data-marca="DELHITEA">
+      <img src="../imgt/te27.webp" alt="TIERRA - GREEN MINT X 20 SAQUITOS" />
+      <p>TIERRA - GREEN MINT X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te28" data-marca="DELHITEA">
+      <img src="../imgt/te28.webp" alt="TE VERDE SENCHA X 20 SAQUITOS" />
+      <p>TE VERDE SENCHA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te29" data-marca="DELHITEA">
+      <img src="../imgt/te29.webp" alt="ENGLISH BREAKFAST X 20 SAQUITOS" />
+      <p>ENGLISH BREAKFAST X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te30" data-marca="DELHITEA">
+      <img src="../imgt/te30.webp" alt="TE BLANCO PAI MUTAN X 20 SAQUITOS" />
+      <p>TE BLANCO PAI MUTAN X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te31" data-marca="DELHITEA">
+      <img src="../imgt/te31.webp" alt="TE ROJO PU ERH X 20 SAQUITOS" />
+      <p>TE ROJO PU ERH X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te32" data-marca="DELHITEA">
+      <img src="../imgt/te32.webp" alt="TE AZUL OOLONG X 20 SAQUITOS" />
+      <p>TE AZUL OOLONG X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te33" data-marca="DELHITEA">
+      <img src="../imgt/te33.webp" alt="" />
+      <p>AMAZONIAN GREEN X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te34" data-marca="DELHITEA">
+      <img src="../imgt/te34.webp" alt="" />
+      <p>PATAGONIAN BERRIES X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te35" data-marca="DELHITEA">
+      <img src="../imgt/te35.webp" alt="" />
+      <p>CHOCOLATE & ORANGE X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te36" data-marca="DELHITEA">
+      <img src="../imgt/te36.webp" alt="" />
+      <p>AFRICAN FLAVOURS X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te37" data-marca="DELHITEA">
+      <img src="../imgt/te37.webp" alt="" />
+      <p>ANCIENT RASPBERRY X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te38" data-marca="DELHITEA">
+      <img src="../imgt/te38.webp" alt="" />
+      <p>CHOCO & ROSES X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te39" data-marca="DELHITEA">
+      <img src="../imgt/te39.webp" alt="" />
+      <p>DARK CEYLON X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te40" data-marca="DELHITEA">
+      <img src="../imgt/te40.webp" alt="" />
+      <p>EARL GREY X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te41" data-marca="DELHITEA">
+      <img src="../imgt/te41.webp" alt="" />
+      <p>GINGER & CHILLI X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te42" data-marca="DELHITEA">
+      <img src="../imgt/te42.webp" alt="" />
+      <p>GREEN WHISPER X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te43" data-marca="DELHITEA">
+      <img src="../imgt/te43.webp" alt="" />
+      <p>SWEET FLOWER X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te44" data-marca="DELHITEA">
+      <img src="../imgt/te44.webp" alt="" />
+      <p>WILDBERRIES & HONEY X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te45" data-marca="DELHITEA">
+      <img src="../imgt/te45.webp" alt="" />
+      <p>YOUNG PASSION X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te46" data-marca="MIX">
+      <img src="../imgt/te46.webp" alt="" />
+      <p>MIX SELECCION ESPECIAL X 30 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te47" data-marca="PATAGONIA">
+      <img src="../imgt/te47.webp" alt="" />
+      <p>FRUTOS DEL BOSQUE X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te48" data-marca="PATAGONIA">
+      <img src="../imgt/te48.webp" alt="" />
+      <p>JAZMIN Y TE VERDE X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te49" data-marca="PATAGONIA">
+      <img src="../imgt/te49.webp" alt="" />
+      <p>ARANDANO - TRADICIONAL X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te50" data-marca="PATAGONIA">
+      <img src="../imgt/te50.webp" alt="" />
+      <p>FRUTAS TROPICALES X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te51" data-marca="PATAGONIA">
+      <img src="../imgt/te51.webp" alt="" />
+      <p>ROSA PETALOS X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te52" data-marca="PATAGONIA">
+      <img src="../imgt/te52.webp" alt="" />
+      <p>TE PU ERH NARANJA & CARDAMOMO X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te53" data-marca="PATAGONIA">
+      <img src="../imgt/te53.webp" alt="" />
+      <p>TE BLANCO CON MANZANA X 20 SAQUITOS</p>
+      <p class="precio">$4.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te54" data-marca="PATAGONIA">
+      <img src="../imgt/te54.webp" alt="" />
+      <p>EARL GREY X 20 SAQUITOS</p>
+      <p class="precio">$3.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te55" data-marca="PATAGONIA">
+      <img src="../imgt/te55.webp" alt="" />
+      <p>TILO X 20 SAQUITOS</p>
+      <p class="precio">$3.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te56" data-marca="PATAGONIA">
+      <img src="../imgt/te56.webp" alt="" />
+      <p>BANANA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te57" data-marca="PATAGONIA">
+      <img src="../imgt/te57.webp" alt="" />
+      <p>BOLDO, MENTA & POLEO X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te58" data-marca="PATAGONIA">
+      <img src="../imgt/te58.webp" alt="" />
+      <p>DURAZNO X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te59" data-marca="PATAGONIA">
+      <img src="../imgt/te59.webp" alt="" />
+      <p>MANZANA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te60" data-marca="PATAGONIA">
+      <img src="../imgt/te60.webp" alt="" />
+      <p>MEZCLA DE HIERBAS X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te61" data-marca="PATAGONIA">
+      <img src="../imgt/te61.webp" alt="" />
+      <p>MIEL X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te62" data-marca="PATAGONIA">
+      <img src="../imgt/te62.webp" alt="" />
+      <p>NARANJA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te63" data-marca="PATAGONIA">
+      <img src="../imgt/te63.webp" alt="" />
+      <p>ROSA MOSQUETA & MANZANILLA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te64" data-marca="PATAGONIA">
+      <img src="../imgt/te64.webp" alt="" />
+      <p>TILO, TE VERDE, MELISA X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te65" data-marca="PATAGONIA">
+      <img src="../imgt/te65.webp" alt="" />
+      <p>TE ROJO X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="te66" data-marca="PATAGONIA">
+      <img src="../imgt/te66.webp" alt="" />
+      <p>TE VERDE X 20 SAQUITOS</p>
+      <p class="precio">$2.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/filtro-marca.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/te.js"></script>
+
+</body>
+</html>
