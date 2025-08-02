@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    
+    <!-- Contenedor con scroll para la lista -->
+    <div id="carrito-productos-container">
+      <div id="lista-carrito"></div>
+    </div>
+
+    <!-- Footer fijo con total y botón -->
+    <div id="carrito-footer">
+      <p id="total">Total: $0</p>
+      <button id="enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Altura:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fondo oscuro para datos cliente -->
+  <div id="fondo-oscuro-datos"></div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="yerba1" data-marca="SILVESTRES">
+      <img src="../imgy/yerba1.webp" alt="Yerba 1" />
+      <p>YERBA ORGANICA PURA X 500 G</p>
+      <p class="precio">$6.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba2" data-marca="SILVESTRES">
+      <img src="../imgy/yerba2.webp" alt="Yerba 2" />
+      <p>YERBA MATE MANZANILLA, BOLDO Y MENTA X 500 G</p>
+      <p class="precio">$6.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba3" data-marca="PATAGONIA">
+      <img src="../imgy/yerba3.webp" alt="Yerba 3" />
+      <p>YERBA MATE MOLIENDA FINA X 500 G</p>
+      <p class="precio">$4.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba4" data-marca="PATAGONIA">
+      <img src="../imgy/yerba4.jpg" alt="Yerba 4" />
+      <p>YERBA MATE MANGO MENTA DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba5" data-marca="PATAGONIA">
+      <img src="../imgy/yerba5.webp" alt="Yerba 5" />
+      <p>YERBA MATE COCO NARANJA DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba6" data-marca="PATAGONIA">
+      <img src="../imgy/yerba6.webp" alt="Yerba 6" />
+      <p>YERBA MATE FRUTAL DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba7" data-marca="PATAGONIA">
+      <img src="../imgy/yerba7.webp" alt="Yerba 7" />
+      <p>YERBA MATE HOJAS DOYPACK X 250 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba8" data-marca="PATAGONIA">
+      <img src="../imgy/yerba8.webp" alt="Yerba 8" />
+      <p>YERBA MATE MOLIENDA FINA DOYPACK X 250 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba9" data-marca="PATAGONIA">
+      <img src="../imgy/yerba9.webp" alt="Yerba 9" />
+      <p>YERBA MATE HERBAL DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba10" data-marca="PATAGONIA">
+      <img src="../imgy/yerba10.webp" alt="Yerba 10" />
+      <p>YERBA MATE CITRICO DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba11" data-marca="PATAGONIA">
+      <img src="../imgy/yerba11.webp" alt="Yerba 11" />
+      <p>YERBA MATE CHAI DOYPACK X 150 G</p>
+      <p class="precio">$5.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba12" data-marca="SILVESTRES">
+      <img src="../imgy/yerba12.webp" alt="Yerba 12" />
+      <p>YERBA COMPUESTA #1 SUAVE X 500 G</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba13" data-marca="SILVESTRES">
+      <img src="../imgy/yerba13.webp" alt="Yerba 13" />
+      <p>YERBA COMPUESTA #2 MEMORIUM X 500 G</p>
+      <p class="precio">$3.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba14" data-marca="SILVESTRES">
+      <img src="../imgy/yerba14.webp" alt="Yerba 14" />
+      <p>YERBA COMPUESTA #3 VITALIS X 500 G</p>
+      <p class="precio">AGOTADO</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba15" data-marca="SILVESTRES">
+      <img src="../imgy/yerba15.webp" alt="Yerba 15" />
+      <p>YERBA COMPUESTA #4 MODELA X 500 G</p>
+      <p class="precio">$3.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="yerba16" data-marca="SILVESTRES">
+      <img src="../imgy/yerba16.webp" alt="Yerba 16" />
+      <p>YERBA COMPUESTA #5 BIENESTAR X 500 G</p>
+      <p class="precio">$3.700</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/filtro-marca.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/yerba.js"></script>
+
+</body>
+</html>

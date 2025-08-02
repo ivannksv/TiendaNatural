@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tienda Natural</title>
+  <link rel="shortcut icon" href="../img/i1.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="../styles/styles.css" />
+</head>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="back-arrow">←</a>
+    <img src="../img/logo.jpg" alt="Logo" class="logo" />
+  </header>
+
+  <div class="pedido-bar">
+    Tus productos naturales.
+  </div>
+  <div class="descuento-bar">TODA LA WEB 10% OFF</div>
+
+  <!-- BOTÓN FLOTANTE para abrir carrito -->
+  <button id="boton-carrito-wsp" title="Ver pedido">
+    <span id="contador-carrito">0</span>
+    <img src="../img/carrito.png" style="filter: invert(1);" alt="Carrito" />
+  </button>
+
+  <!-- SIDEBAR DEL CARRITO -->
+  <div id="carrito-sidebar">
+    <h2>Tu pedido</h2>
+    
+    <!-- Contenedor con scroll para la lista -->
+    <div id="carrito-productos-container">
+      <div id="lista-carrito"></div>
+    </div>
+
+    <!-- Footer fijo con total y botón -->
+    <div id="carrito-footer">
+      <p id="total">Total: $0</p>
+      <button id="enviar-pedido">Enviar Pedido</button>
+    </div>
+  </div>
+
+  <div id="datos-cliente-modal" class="modal-datos-cliente">
+    <div class="modal-contenido">
+      <h3>Datos para el envío</h3>
+
+      <label for="nombre-cliente">Nombre:</label>
+      <input type="text" id="nombre-cliente" placeholder="Su nombre" />
+
+      <label for="ciudad-cliente">Ciudad:</label>
+      <input type="text" id="ciudad-cliente" placeholder="Su ciudad" />
+
+      <label for="calle-cliente">Calle:</label>
+      <input type="text" id="calle-cliente" placeholder="Su calle" />
+
+      <label for="direccion-cliente">Altura:</label>
+      <input type="text" id="direccion-cliente" placeholder="Su dirección" />
+
+      <div style="margin-top:10px; text-align:right;">
+        <button id="confirmar-datos">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fondo oscuro para datos cliente -->
+  <div id="fondo-oscuro-datos"></div>
+
+  <!-- FONDO OSCURO -->
+  <div id="fondo-oscuro"></div>
+
+  <main class="productos">
+    <div class="producto" id="hebras1" data-marca="DELHITEA">
+      <img src="../imgh/he1.webp" alt="Yerba 1" />
+      <p>CHOCOLATE & ORANGE X 40 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras2" data-marca="DELHITEA">
+      <img src="../imgh/he2.webp" alt="Yerba 2" />
+      <p>AMAZONIAN GREEN X 40 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras3" data-marca="DELHITEA">
+      <img src="../imgh/he3.webp" alt="Yerba 3" />
+      <p>PATAGONIAN BERRIES X 40 G </p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras4" data-marca="DELHITEA">
+      <img src="../imgh/he4.webp" alt="Yerba 4" />
+      <p>ANCIENT RASPBERRY X 40 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras5" data-marca="DELHITEA">
+      <img src="../imgh/he5.webp" alt="Yerba 1" />
+      <p>ROOIBOS RED FRUITS X 40 G </p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras6" data-marca="DELHITEA">
+      <img src="../imgh/he6.webp" alt="Yerba 1" />
+      <p>CHINESE GREEN TEA X 40 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras7" data-marca="DELHITEA">
+      <img src="../imgh/he7.webp" alt="Yerba 1" />
+      <p>CHOCOLATE TEMPTATION X 40 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras8" data-marca="DELHITEA">
+      <img src="../imgh/he8.webp" alt="Yerba 1" />
+      <p>HEBRAS VERDE SENCHA X 40 G</p>
+      <p class="precio">$7.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras9" data-marca="DELHITEA">
+      <img src="../imgh/he9.webp" alt="Yerba 1" />
+      <p>HEBRAS NEGRO CEYLON X 40 G</p>
+      <p class="precio">$7.300</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras10" data-marca="PATAGONIA">
+      <img src="../imgh/he10.webp" alt="Yerba 1" />
+      <p>VAINILLA DOYPACK X 40 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras11" data-marca="PATAGONIA">
+      <img src="../imgh/he11.webp" alt="Yerba 1" />
+      <p>ARANDANO DOYPACK X 50 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras12" data-marca="PATAGONIA">
+      <img src="../imgh/he12.webp" alt="Yerba 1" />
+      <p>HEBRAS NEGRO CHOCOLATE & MENTA DOYPACK X 40 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras13" data-marca="PATAGONIA">
+      <img src="../imgh/he13.webp" alt="Yerba 1" />
+      <p>HEBRAS BERRY CHAI DOYPACK X 50 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras14" data-marca="PATAGONIA">
+      <img src="../imgh/he14.webp" alt="Yerba 1" />
+      <p>HEBRAS VERDE, JENGIBRE & MENTA DOYPACK X 50 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras15" data-marca="PATAGONIA">
+      <img src="../imgh/he15.webp" alt="Yerba 1" />
+      <p>JENGIBRE DOYPACK X 50 G </p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras16" data-marca="SILVESTRES">
+      <img src="../imgh/he16.webp" alt="Yerba 1" />
+      <p>TE VERDE CON MENTA X 40 G</p>
+      <p class="precio">$5.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras17" data-marca="SILVESTRES">
+      <img src="../imgh/he17.webp" alt="Yerba 1" />
+      <p>MANZANILLA, ANIS Y CANELA X 40 G</p>
+      <p class="precio">$5.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras18" data-marca="SILVESTRES">
+      <img src="../imgh/he18.webp" alt="Yerba 1" />
+      <p>HEBRAS NEGRO ORGANICO CHAI X 40 G</p>
+      <p class="precio">$5.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras19" data-marca="SILVESTRES">
+      <img src="../imgh/he19.webp" alt="Yerba 1" />
+      <p>FRUTOS ROJOS X 40 G</p>
+      <p class="precio">$5.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras20" data-marca="PATAGONIA">
+      <img src="../imgh/he20.webp" alt="Yerba 1" />
+      <p>SENCHA CON COCO & ANANA DOYPACK X 50 G</p>
+      <p class="precio">$6.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras21" data-marca="VITA">
+      <img src="../imgh/he21.webp" alt="TE BOX 108 SAQUITOS" />
+      <p>OOLONG MANGO X 50 G</p>
+      <p class="precio">$10.800</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras22" data-marca="DELHITEA">
+      <img src="../imgh/he22.webp" alt="TE BOX 108 SAQUITOS" />
+      <p>HIBISCUS X 30 G</p>
+      <p class="precio">$6.100</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras23" data-marca="VITA">
+      <img src="../imgh/he23.webp" alt="" />
+      <p>MATE BALANCE X 80 G</p>
+      <p class="precio">$7.550</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras24" data-marca="DELHITEA">
+      <img src="../imgh/he24.webp" alt="" />
+      <p>AGUA - OOLONG CON DURAZNO Y ROSAS X 40 G</p>
+      <p class="precio">$7.550</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras25" data-marca="DELHITEA">
+      <img src="../imgh/he25.webp" alt="" />
+      <p>AIRE - FLOWERY WHITE X 40 G</p>
+      <p class="precio">$7.550</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras26" data-marca="DELHITEA">
+      <img src="../imgh/he26.webp" alt="" />
+      <p>FUEGO - GINGER PU ERH X 40 G</p>
+      <p class="precio">$7.550</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras27" data-marca="DELHITEA">
+      <img src="../imgh/he27.webp" alt="" />
+      <p>TIERRA - GREEN MINT X 40</p>
+      <p class="precio">$7.550</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras28" data-marca="DELHITEA">
+      <img src="../imgh/he28.webp" alt="" />
+      <p>YOUNG PASSION X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras29" data-marca="DELHITEA">
+      <img src="../imgh/he29.webp" alt="" />
+      <p>GREEN WHISPER X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras30" data-marca="DELHITEA">
+      <img src="../imgh/he30.webp" alt="" />
+      <p>BLUEBERRY DREAMS X 60 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras31" data-marca="DELHITEA">
+      <img src="../imgh/he31.webp" alt="" />
+      <p>CINNAMON & ROSEHIPS X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras32" data-marca="DELHITEA">
+      <img src="../imgh/he32.webp" alt="" />
+      <p>EARL GREY X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras33" data-marca="DELHITEA">
+      <img src="../imgh/he33.webp" alt="" />
+      <p>FANTASY ISLAND X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras34" data-marca="DELHITEA">
+      <img src="../imgh/he34.webp" alt="" />
+      <p>INDIAN CHAI X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras35" data-marca="DELHITEA">
+      <img src="../imgh/he35.webp" alt="" />
+      <p>ROOIBOS CARAMEL X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras36" data-marca="DELHITEA">
+      <img src="../imgh/he36.webp" alt="" />
+      <p>SWEET FLOWER X 30 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras37" data-marca="DELHITEA">
+      <img src="../imgh/he37.webp" alt="" />
+      <p>TURMERIC HONEY CHAI X 40 G </p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div> 
+    <div class="producto" id="hebras38" data-marca="DELHITEA">
+      <img src="../imgh/he38.webp" alt="" />
+      <p>TE BLANCO PAI MUTAN X 40 G </p>
+      <p class="precio">$7.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras39" data-marca="DELHITEA">
+      <img src="../imgh/he39.webp" alt="" />
+      <p>ENGLISH BREAKFAST X 40 G</p>
+      <p class="precio">$7.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras40" data-marca="DELHITEA">
+      <img src="../imgh/he40.webp" alt="" />
+      <p>TE AZUL OOLONG X 40 G</p>
+      <p class="precio">$7.400</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras41" data-marca="DELHITEA">
+      <img src="../imgh/he41.webp" alt="" />
+      <p>TE VERDE GUNPOWDER X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras42" data-marca="DELHITEA">
+      <img src="../imgh/he42.webp" alt="" />
+      <p>ROOIBOS X 40 G</p>
+      <p class="precio">$6.200</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras43" data-marca="MATCHA">
+      <img src="../imgh/he43.webp" alt="" />
+      <p>GOLDEN MATCHA X 50 G</p>
+      <p class="precio">$14.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras44" data-marca="MATCHA">
+      <img src="../imgh/he44.webp" alt="" />
+      <p>TE VERDE MATCHA X 50 G</p>
+      <p class="precio">$14.600</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras45" data-marca="PATAGONIA">
+      <img src="../imgh/he45.webp" alt="" />
+      <p>HIBISCUS & ENEBRO DOYPACK X 40 G</p>
+      <p class="precio">$6.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras46" data-marca="PATAGONIA">
+      <img src="../imgh/he46.webp" alt="" />
+      <p>TE VERDE, TILO, MELISA DOYPACK X 50 G </p>
+      <p class="precio">$6.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+    <div class="producto" id="hebras47" data-marca="PATAGONIA">
+      <img src="../imgh/he47.webp" alt="" />
+      <p>TE CHAI DOYPACK X 50 G</p>
+      <p class="precio">$6.900</p>
+      <button class="agregar-btn">Agregar al pedido</button>
+    </div>
+  </main>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      
+      <div class="imagen-fija">
+        <img id="modal-img" src="" alt="Producto" />
+      </div>
+
+      <div class="contenido-scroll">
+        <h2 id="modal-title">Título</h2>
+        <p id="modal-price" class="precio">Precio</p>
+        <p id="modal-info">Descripción del producto...</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-final">
+      <a class="footer-link" href="https://ivannksv.github.io/DisenadorWebIK/">
+        &copy; Diseño: <span class="footer-nombre">Iván Karabencsov</span>. Todos los derechos reservados.
+      </a>
+    </div>
+  </footer>
+
+  <script src="../js/filtro-marca.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/productos/hebras.js"></script>
+
+</body>
+</html>
