@@ -620,5 +620,42 @@ const productosTe = [
     categoria: "te",
     marca: "PATAGONIA"
     },
+    {
+    id: "te67",
+    nombre: "TE VERDE ORGANICO CON MENTA X 15 SAQUITOS",
+    precio: "$3.800",
+    descripcion: "Té verde orgánico con hojas de menta. Esta infusión te ofrece un sabor delicado y refrescante, perfecto para cualquier momento del día..",
+    imagen: "../imgt/te67.webp",
+    categoria: "te",
+    marca: "SILVESTRES"
+    },
+    {
+    id: "te68",
+    nombre: "MANZANILLA, ANIS Y CANELA X 15 SAQUITOS",
+    precio: "$3.800",
+    descripcion: "Flores de manzanilla, anís estrellado y canela. Disfrutá de una infusión que combina la suavidad de la manzanilla, el toque exótico del anís y la calidez de la canela.",
+    imagen: "../imgt/te68.webp",
+    categoria: "te",
+    marca: "SILVESTRES"
+    },
+    {
+    id: "te69",
+    nombre: "FRUTOS ROJOS X 15 SAQUITOS",
+    precio: "$3.800",
+    descripcion: "Mezcla de hibisco, cáscara de naranja, rosa mosqueta y arándano rojo. Disfrutá la frescura de esta infusión con hibisco, cáscara de naranja, rosa mosqueta y arándano rojo. Perfecta para disfrutar en cualquier momento del día.",
+    imagen: "../imgt/te69.webp",
+    categoria: "te",
+    marca: "SILVESTRES"
+    },
+    {
+    id: "te70",
+    nombre: "TE NEGRO ORGANICO CHAI X 15 SAQUITOS",
+    precio: "$3.800",
+    descripcion: "Mezcla de té negro orgánico, jengibre, pimienta negra, canela, anís estrellado, clavo de olor. Dejate llevar por la mezcla perfecta de té negro orgánico y especias aromáticas seleccionadas. Ideal para tomar con leche.",
+    imagen: "../imgt/te70.webp",
+    categoria: "te",
+    marca: "SILVESTRES"
+    },
 ];
+
 
